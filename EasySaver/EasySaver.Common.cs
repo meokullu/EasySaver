@@ -3,7 +3,7 @@ using System.Text;
 
 [assembly: InternalsVisibleTo("EasySaver.TextFile")]
 [assembly: InternalsVisibleTo("EasySaver.BitmapFile")]
-namespace EasySaver
+namespace EasySaver.Common
 {
     /// <summary>
     /// 
@@ -13,10 +13,10 @@ namespace EasySaver
         #region File paths
 
         // Path for pre-populated random file name list.
-        private readonly static string _defaultFileNamePath = "DefaultRandomFileNameList.txt";
+        private static readonly string _defaultFileNamePath = "DefaultRandomFileNameList.txt";
 
         // Path for random file list.
-        private readonly static string _randomFileNamePath = "RandomFileNameList.txt";
+        private static readonly string _randomFileNamePath = "RandomFileNameList.txt";
 
         #endregion File paths
 
@@ -49,12 +49,10 @@ namespace EasySaver
             RandomName = 5
         }
 
-        private static NamingFormat _selectedNamingFormat;
-
         /// <summary>
         /// Variable that hold user choice to determine which option would be used for naming a file.
         /// </summary>
-        public static NamingFormat SelectedNamingFormat { get => _selectedNamingFormat; set => _selectedNamingFormat = value; }
+        public static NamingFormat SelectedNamingFormat { get; set; }
 
         #endregion Naming formats
 
@@ -171,7 +169,7 @@ namespace EasySaver
         /// </summary>
         /// <returns></returns>
         public static string NowString => GetFormattedDateTimeStamp(NamingFormat.Time);
-       
+
         /// <summary>
         /// Get formatted datetime span by pre-chosen option.
         /// </summary>

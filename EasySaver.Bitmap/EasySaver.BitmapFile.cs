@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.Versioning;
-using static EasySaver.EasySaver;
+using static EasySaver.Common.EasySaver;
 
 namespace EasySaver.BitmapFile
 {
@@ -66,7 +66,7 @@ namespace EasySaver.BitmapFile
             }
 
             // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
-            System.IO.Directory.CreateDirectory($"{folderName}\\");
+            _ = System.IO.Directory.CreateDirectory($"{folderName}\\");
 
             //
             bitmap.Save($"./{folderName}/{fileName}", ImageFormat.Bmp);
@@ -143,7 +143,7 @@ namespace EasySaver.BitmapFile
             try
             {
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
-                Directory.CreateDirectory($"{folderName}\\");
+                _ = Directory.CreateDirectory($"{folderName}\\");
 
                 //
                 bitmap.Save($"./{folderName}/{fileName}", ImageFormat.Bmp);

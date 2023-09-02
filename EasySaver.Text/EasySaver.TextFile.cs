@@ -1,4 +1,4 @@
-﻿using static EasySaver.EasySaver;
+﻿using static EasySaver.Common.EasySaver;
 
 namespace EasySaver.TextFile
 {
@@ -10,7 +10,7 @@ namespace EasySaver.TextFile
         private static void WriteViaStreamWriter(string path, string text)
         {
             //
-            using StreamWriter writer = new StreamWriter(path);
+            using StreamWriter writer = new(path);
 
             //
             writer.Write(text);
@@ -40,6 +40,7 @@ namespace EasySaver.TextFile
         /// <param name="fileName"></param>
         /// <param name="namingFormat"></param>
         /// <param name="overwrite"></param>
+        /// <param name="renameIfExists"></param>
         public static bool Save(string text, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
             if (namingFormat == NamingFormat.Custom)
@@ -125,7 +126,7 @@ namespace EasySaver.TextFile
             if (CheckIfFolderExist(folderName) == false)
             {
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
-                System.IO.Directory.CreateDirectory($"{folderName}\\");
+                _ = System.IO.Directory.CreateDirectory($"{folderName}\\");
             }
 
             //
@@ -135,7 +136,7 @@ namespace EasySaver.TextFile
             if (_fileExists == false)
             {
                 //
-                WriteViaStreamWriter(path: ("{folderName}/{fileName}"), text: text);
+                WriteViaStreamWriter(path: "{folderName}/{fileName}", text: text);
 
                 //
                 return true;
@@ -257,10 +258,10 @@ namespace EasySaver.TextFile
             try
             {
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
-                System.IO.Directory.CreateDirectory($"{folderName}\\");
+                _ = System.IO.Directory.CreateDirectory($"{folderName}\\");
 
                 //
-                using StreamWriter writer = new StreamWriter($"./{folderName}/{fileName}.txt");
+                using StreamWriter writer = new($"./{folderName}/{fileName}.txt");
 
                 //
                 writer.WriteLine(text);
