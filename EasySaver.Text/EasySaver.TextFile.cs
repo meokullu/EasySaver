@@ -85,6 +85,9 @@ namespace EasySaver.TextFile
                         return true;
                     }
                 }
+
+                //
+                return false;
             }
             else
             {
@@ -156,11 +159,17 @@ namespace EasySaver.TextFile
                         return true;
                     }
                 }
+
+                //
+                return false;
             }
             else
             {
                 //
                 WriteViaStreamWriter(path: fileName, text: text);
+
+                //
+                return true;
             }
         }
 
@@ -218,6 +227,9 @@ namespace EasySaver.TextFile
                         return _result;
                     }
                 }
+
+                //
+                return (false, new ArgumentOutOfRangeException());
             }
             else
             {
