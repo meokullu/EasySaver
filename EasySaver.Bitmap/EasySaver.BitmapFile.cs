@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Drawing.Imaging;
 using System.Runtime.Versioning;
 using static EasySaver.Common.EasySaver;
 
@@ -11,6 +10,8 @@ namespace EasySaver.BitmapFile
     [SupportedOSPlatform("windows")]
     public class EasySaverBitmapFile
     {
+        #region Saving
+
         private static void Save(string path, Bitmap bitmap)
         {
             //
@@ -33,6 +34,8 @@ namespace EasySaver.BitmapFile
                 return (false, ex);
             }
         }
+
+        #endregion Saving
 
         /// <summary>
         /// 
@@ -254,9 +257,11 @@ namespace EasySaver.BitmapFile
         /// <param name="fileName"></param>
         /// <param name="folderName"></param>
         /// <param name="namingFormat"></param>
+        /// <param name="overwrite"></param>
+        /// <param name="renameIfExists"></param>
         /// <returns></returns>
         [SupportedOSPlatform("windows")]
-        public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat = NamingFormat.RandomName)
+        public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.RandomName, bool overwrite = false, bool renameIfExists = true) 
         {
             //
             if (namingFormat == NamingFormat.Custom)
@@ -274,21 +279,50 @@ namespace EasySaver.BitmapFile
                 fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
             }
 
-            try
+            //
+            if (CheckIfFolderExist($"./{folderName}"))
             {
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
-                _ = Directory.CreateDirectory($"{folderName}\\");
-
-                //
-                bitmap.Save($"./{folderName}/{fileName}", ImageFormat.Bmp);
-
-                //
-                return (true, null);
+                _ = System.IO.Directory.CreateDirectory($"{folderName}\\");
             }
-            catch (Exception ex)
+
+            //
+            bool fileExists = CheckIfFileExist(fileName);
+
+            if (fileExists == false)
             {
                 //
-                return (false, ex);
+                (bool, Exception?) result = SaveSafe(path: fileName, bitmap: bitmap);
+
+                //
+                return result;
+            }
+            else if(overwrite == false)
+            {
+                //
+                for (int i = 0; i < 255; i++)
+                {
+                    //
+                    if (CheckIfFileExist(path: $"{folderName}/{fileName}({i})") == false)
+                    {
+                        //
+                        (bool, Exception?) result = SaveSafe(path: fileName, bitmap: bitmap);
+
+                        //
+                        return result;
+                    }
+                }
+
+                //
+                return (false, new ArgumentOutOfRangeException());
+            }
+            else
+            {
+                //
+                (bool, Exception?) result = SaveSafe(path: fileName, bitmap: bitmap);
+
+                //
+                return result;
             }
         }
     }

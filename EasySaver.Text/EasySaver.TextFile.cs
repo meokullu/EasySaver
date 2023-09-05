@@ -310,10 +310,10 @@ namespace EasySaver.TextFile
             else
             {
                 //
-                _ = WriteViaStreamWriterSafe(path: fileName, text: text);
+                (bool, Exception?) result = WriteViaStreamWriterSafe(path: fileName, text: text);
 
                 //
-                return (true, null);
+                return result;
             }
         }
     }
