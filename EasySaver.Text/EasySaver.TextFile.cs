@@ -126,6 +126,7 @@ namespace EasySaver.TextFile
                 fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
             }
 
+            //
             if (CheckIfFolderExist(folderName) == false)
             {
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
@@ -139,7 +140,7 @@ namespace EasySaver.TextFile
             if (_fileExists == false)
             {
                 //
-                WriteViaStreamWriter(path: "{folderName}/{fileName}", text: text);
+                WriteViaStreamWriter(path: $"{folderName}/{fileName}", text: text);
 
                 //
                 return true;
@@ -248,8 +249,10 @@ namespace EasySaver.TextFile
         /// <param name="fileName"></param>
         /// <param name="folderName"></param>
         /// <param name="namingFormat"></param>
+        /// <param name="overwrite"></param>
+        /// <param name="renameIfExists"></param>
         /// <returns></returns>
-        public static (bool, Exception?) SaveSafe(string text, string fileName, string folderName, NamingFormat namingFormat = NamingFormat.RandomName)
+        public static (bool, Exception?) SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.RandomName, bool overwrite = false, bool renameIfExists = true)
         {
             //
             if (namingFormat == NamingFormat.Custom)
@@ -267,26 +270,51 @@ namespace EasySaver.TextFile
                 fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
             }
 
-            try
+            //
+            if (CheckIfFolderExist($"./{folderName}"))
             {
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
                 _ = System.IO.Directory.CreateDirectory($"{folderName}\\");
+            }
+
+            //
+            bool fileExist = CheckIfFolderExist(fileName);
+
+            //
+            if (fileExist == false)
+            {
+                //
+                (bool, Exception?) result = WriteViaStreamWriterSafe(path: fileName, text: text);
 
                 //
-                using StreamWriter writer = new($"./{folderName}/{fileName}.txt");
+                return result;
+            }
+            else if (overwrite == false)
+            {
+                //
+                for (int i = 0; i < 255; i++)
+                {
+                    //
+                    if (CheckIfFileExist(path: $"{folderName}/{fileName}({i})") == false)
+                    {
+                        (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"{folderName}/{fileName}({i})", text: text);
+
+                        //
+                        return result;
+                    }
+                }
 
                 //
-                writer.WriteLine(text);
+                return (false, new ArgumentOutOfRangeException());
+            }
+            else
+            {
+                //
+                _ = WriteViaStreamWriterSafe(path: fileName, text: text);
 
                 //
                 return (true, null);
             }
-            catch (Exception ex)
-            {
-                //
-                return (false, ex);
-            }
-
         }
     }
 }

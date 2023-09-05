@@ -10,6 +10,9 @@ namespace EasySaver.Common
     /// </summary>
     public class EasySaver
     {
+        //
+        internal readonly byte _maxAttemptForRename = byte.MaxValue;
+
         #region File paths
 
         // Path for pre-populated random file name list.
