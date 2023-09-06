@@ -1,12 +1,17 @@
-﻿using static EasySaver.Common.EasySaver;
+﻿using System.Reflection;
+using System.Runtime.Versioning;
+using static EasySaver.Common.EasySaver;
 
 namespace EasySaver.TextFile
 {
     /// <summary>
     /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class EasySaverTextFile
     {
+        #region Write
+
         private static void WriteViaStreamWriter(string path, string text)
         {
             //
@@ -33,6 +38,8 @@ namespace EasySaver.TextFile
             }
         }
 
+        #endregion Write
+
         /// <summary>
         /// Save file with
         /// </summary>
@@ -43,20 +50,8 @@ namespace EasySaver.TextFile
         /// <param name="renameIfExists"></param>
         public static bool Save(string text, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
-            if (namingFormat == NamingFormat.Custom)
-            {
-                //
-            }
-            else if (namingFormat == NamingFormat.RandomName)
-            {
-                // If file name is null bring random name from list.
-                fileName ??= GetAvailableFileName();
-            }
-            else
-            {
-                //
-                fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
-            }
+            //
+            fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
             bool _fileExists = CheckIfFileExist(path: $"./{fileName}");
@@ -65,15 +60,15 @@ namespace EasySaver.TextFile
             if (_fileExists == false)
             {
                 //
-                WriteViaStreamWriter(path: fileName, text: text);
+                WriteViaStreamWriter(path: $"./{fileName}", text: text);
 
                 //
                 return true;
             }
-            else if (overwrite == false)
+            else if (overwrite == false && renameIfExists)
             {
                 //
-                for (int i = 0; i < 255; i++)
+                for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
                     if (CheckIfFileExist(path: $"./{fileName}({i})") == false)
@@ -92,7 +87,7 @@ namespace EasySaver.TextFile
             else
             {
                 //
-                WriteViaStreamWriter(path: fileName, text: text);
+                WriteViaStreamWriter(path: $"./{fileName}", text: text);
 
                 //
                 return true;
@@ -111,20 +106,7 @@ namespace EasySaver.TextFile
         public static bool Save(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.RandomName, bool overwrite = false, bool renameIfExists = true)
         {
             //
-            if (namingFormat == NamingFormat.Custom)
-            {
-                //
-            }
-            else if (namingFormat == NamingFormat.RandomName)
-            {
-                // if file name is null bring random name from list.
-                fileName ??= GetAvailableFileName();
-            }
-            else
-            {
-                //
-                fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
-            }
+            fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
             if (CheckIfFolderExist(folderName) == false)
@@ -145,10 +127,10 @@ namespace EasySaver.TextFile
                 //
                 return true;
             }
-            else if (overwrite == false)
+            else if (overwrite == false && renameIfExists)
             {
                 //
-                for (int i = 0; i < 255; i++)
+                for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i})") == false)
@@ -167,7 +149,7 @@ namespace EasySaver.TextFile
             else
             {
                 //
-                WriteViaStreamWriter(path: fileName, text: text);
+                WriteViaStreamWriter(path: $"./{fileName}", text: text);
 
                 //
                 return true;
@@ -186,26 +168,13 @@ namespace EasySaver.TextFile
         public static (bool, Exception?) SaveSafe(string text, string fileName, NamingFormat namingFormat = NamingFormat.RandomName, bool overwrite = false, bool renameIfExists = true)
         {
             //
-            if (namingFormat == NamingFormat.Custom)
-            {
-                //
-            }
-            else if (namingFormat == NamingFormat.RandomName)
-            {
-                //
-                fileName ??= GetAvailableFileName();
-            }
-            else
-            {
-                //
-                fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
-            }
+            fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
-            bool _fileExists = CheckIfFileExist(path: $"./{fileName}");
+            bool fileExists = CheckIfFileExist(path: $"./{fileName}");
 
             //
-            if (_fileExists == false)
+            if (fileExists == false)
             {
                 //
                 (bool, Exception?) _result = WriteViaStreamWriterSafe(path: fileName, text: text);
@@ -213,10 +182,10 @@ namespace EasySaver.TextFile
                 //
                 return _result;
             }
-            else if (overwrite == false)
+            else if (overwrite == false && renameIfExists)
             {
                 //
-                for (int i = 0; i < 255; i++)
+                for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
                     if (CheckIfFileExist(path: $"./{fileName}({i})") == false)
@@ -230,12 +199,12 @@ namespace EasySaver.TextFile
                 }
 
                 //
-                return (false, new ArgumentOutOfRangeException());
+                return (false, new ArgumentOutOfRangeException(paramName: null, message: MaxAttemptMessage(MethodBase.GetCurrentMethod()!.Name)));
             }
             else
             {
                 //
-                (bool, Exception?) _result = WriteViaStreamWriterSafe(path: fileName, text: text);
+                (bool, Exception?) _result = WriteViaStreamWriterSafe(path: $"./{fileName}", text: text);
 
                 //
                 return _result;
@@ -255,20 +224,7 @@ namespace EasySaver.TextFile
         public static (bool, Exception?) SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.RandomName, bool overwrite = false, bool renameIfExists = true)
         {
             //
-            if (namingFormat == NamingFormat.Custom)
-            {
-                //
-            }
-            if (namingFormat == NamingFormat.RandomName)
-            {
-                //
-                fileName ??= GetAvailableFileName();
-            }
-            else
-            {
-                //
-                fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
-            }
+            fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
             if (CheckIfFolderExist($"./{folderName}"))
@@ -278,21 +234,21 @@ namespace EasySaver.TextFile
             }
 
             //
-            bool fileExist = CheckIfFolderExist(fileName);
+            bool fileExist = CheckIfFolderExist(folderName);
 
             //
             if (fileExist == false)
             {
                 //
-                (bool, Exception?) result = WriteViaStreamWriterSafe(path: fileName, text: text);
+                (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"{folderName}/{fileName}", text: text);
 
                 //
                 return result;
             }
-            else if (overwrite == false)
+            else if (overwrite == false && renameIfExists)
             {
                 //
-                for (int i = 0; i < 255; i++)
+                for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i})") == false)
@@ -305,12 +261,12 @@ namespace EasySaver.TextFile
                 }
 
                 //
-                return (false, new ArgumentOutOfRangeException());
+                return (false, new ArgumentOutOfRangeException(paramName: null, message: MaxAttemptMessage(MethodBase.GetCurrentMethod()!.Name)));
             }
             else
             {
                 //
-                (bool, Exception?) result = WriteViaStreamWriterSafe(path: fileName, text: text);
+                (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{fileName}", text: text);
 
                 //
                 return result;

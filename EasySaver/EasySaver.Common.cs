@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 [assembly: InternalsVisibleTo("EasySaver.TextFile")]
@@ -6,12 +7,19 @@ using System.Text;
 namespace EasySaver.Common
 {
     /// <summary>
-    /// 
+    /// Easy Saver Common
     /// </summary>
     public class EasySaver
     {
-        //
-        internal readonly byte _maxAttemptForRename = byte.MaxValue;
+        /// <summary>
+        /// Variable indicates maximum attemt of renaming file name with new one if previous one does exist.
+        /// </summary>
+        internal static readonly byte _maxAttemptForRename = byte.MaxValue;
+
+        /// <summary>
+        /// In case of reaching maximum attempt, this method create a message to indicate which method reached
+        /// </summary>
+        internal static string MaxAttemptMessage(string methodName) => $"{methodName} reached maximum attempt ({_maxAttemptForRename})of renaming file that is about to save.";
 
         #region File paths
 
@@ -22,6 +30,29 @@ namespace EasySaver.Common
         private static readonly string _randomFileNamePath = "RandomFileNameList.txt";
 
         #endregion File paths
+
+        internal static string GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.DateTime)
+        {
+            if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.Date || namingFormat == NamingFormat.Time)
+            {
+                //
+                return GetFormattedDateTimeStamp(namingFormat: namingFormat);
+            }
+            else if (namingFormat == NamingFormat.Custom)
+            {
+                //
+                return fileName;
+            }
+            else if (namingFormat == NamingFormat.RandomName)
+            {
+                // If file name is null bring random name from list.
+                return GetAvailableFileName();
+            }
+            else
+            {
+                throw new Exception("NamingFormat is not correct");
+            }
+        }
 
         #region Naming formats
 
@@ -80,7 +111,7 @@ namespace EasySaver.Common
             }
 
             //
-            int availableNameOptions = _randomFileNameList.Length;
+            int availableNameOptions = _randomFileNameList!.Length;
 
             // TODO: -1 for length?
             int indexOfAvailableName = new Random().Next(maxValue: availableNameOptions);

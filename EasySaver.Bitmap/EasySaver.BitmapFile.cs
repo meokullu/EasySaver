@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Reflection;
 using System.Runtime.Versioning;
 using static EasySaver.Common.EasySaver;
 
@@ -12,12 +13,23 @@ namespace EasySaver.BitmapFile
     {
         #region Saving
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="bitmap"></param>
         private static void Save(string path, Bitmap bitmap)
         {
             //
             bitmap.Save(path);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="bitmap"></param>
+        /// <returns></returns>
         private static (bool, Exception?) SaveSafe(string path, Bitmap bitmap)
         {
             try
@@ -46,23 +58,10 @@ namespace EasySaver.BitmapFile
         /// <param name="overwrite"></param>
         /// <param name="renameIfExists"></param>
         [SupportedOSPlatform("windows")]
-        public static bool Save(Bitmap bitmap, string fileName, NamingFormat namingFormat = NamingFormat.RandomName, bool overwrite = false, bool renameIfExists = true)
+        public static bool Save(Bitmap bitmap, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
             //
-            if (namingFormat == NamingFormat.Custom)
-            {
-                //
-            }
-            else if (namingFormat == NamingFormat.RandomName)
-            {
-                // If file name is null bring random name from list.
-                fileName ??= GetAvailableFileName();
-            }
-            else
-            {
-                // If file name is not given it gets fileName from pre-chosen formatted DateTimeStamp.
-                fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
-            }
+            fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
             bool ifExist = CheckIfFileExist(path: $"./{fileName}");
@@ -71,21 +70,21 @@ namespace EasySaver.BitmapFile
             if (ifExist == false)
             {
                 //
-                Save(path: fileName, bitmap: bitmap);
+                Save(path: $"./{fileName}", bitmap: bitmap);
 
                 //
                 return true;
             }
-            else if (overwrite == false)
+            else if (overwrite == false && renameIfExists)
             {
                 //
-                for (int i = 0; i < 255; i++)
+                for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
                     if (CheckIfFileExist(path: $"./{fileName}({i})") == false)
                     {
                         //
-                        Save(path: fileName, bitmap: bitmap);
+                        Save(path: $"./{fileName}", bitmap: bitmap);
 
                         //
                         return true;
@@ -98,7 +97,7 @@ namespace EasySaver.BitmapFile
             else
             {
                 //
-                Save(path: fileName, bitmap: bitmap);
+                Save(path: $"./{fileName}", bitmap: bitmap);
 
                 //
                 return true;
@@ -118,20 +117,7 @@ namespace EasySaver.BitmapFile
         public static bool Save(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat = NamingFormat.RandomName, bool overwrite = false, bool renameIfExists = false)
         {
             //
-            if (namingFormat == NamingFormat.Custom)
-            {
-                //
-            }
-            else if (namingFormat == NamingFormat.RandomName)
-            {
-                // If file name is null bring random name from list.
-                fileName ??= GetAvailableFileName();
-            }
-            else
-            {
-                //
-                fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
-            }
+            fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
             if (CheckIfFolderExist(folderName) == false)
@@ -152,10 +138,10 @@ namespace EasySaver.BitmapFile
                 //
                 return true;
             }
-            else if (overwrite == false)
+            else if (overwrite == false && renameIfExists)
             {
                 //
-                for (int i = 0; i < 255; i++)
+                for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i})"))
@@ -174,7 +160,7 @@ namespace EasySaver.BitmapFile
             else
             {
                 //
-                Save(path: fileName, bitmap: bitmap);
+                Save(path: $"./{fileName}", bitmap: bitmap);
 
                 //
                 return true;
@@ -194,36 +180,24 @@ namespace EasySaver.BitmapFile
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, NamingFormat namingFormat = NamingFormat.RandomName, bool overwrite = false, bool renameIfExists = true)
         {
             //
-            if (namingFormat == NamingFormat.Custom)
-            {
-                //
-            }
-            else if (namingFormat == NamingFormat.RandomName)
-            {
-                // If file name is null bring random name from list.
-                fileName ??= GetAvailableFileName();
-            }
-            else
-            {
-                //
-                fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
-            }
+            fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
             bool fileExists = CheckIfFileExist(path: $"./{fileName}");
 
+            //
             if (fileExists == false)
             {
                 //
-                (bool, Exception?) _result = SaveSafe(path: fileName, bitmap: bitmap);
+                (bool, Exception?) _result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
 
                 //
                 return _result;
             }
-            else if (overwrite == false)
+            else if (overwrite == false && renameIfExists)
             {
                 //
-                for (int i = 0; i < 255; i++)
+                for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
                     if (CheckIfFileExist(path: $"./{fileName}({i})") == false)
@@ -237,13 +211,13 @@ namespace EasySaver.BitmapFile
                 }
 
                 //
-                return (false, new ArgumentOutOfRangeException());
+                return (false, new ArgumentOutOfRangeException(paramName: null, message: MaxAttemptMessage(MethodBase.GetCurrentMethod()!.Name)));
 
             }
             else
             {
                 //
-                (bool, Exception?) result = SaveSafe(path: fileName, bitmap: bitmap);
+                (bool, Exception?) result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
 
                 //
                 return result;
@@ -264,20 +238,7 @@ namespace EasySaver.BitmapFile
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.RandomName, bool overwrite = false, bool renameIfExists = true) 
         {
             //
-            if (namingFormat == NamingFormat.Custom)
-            {
-                //
-            }
-            else if (namingFormat == NamingFormat.RandomName)
-            {
-                // If file name is null bring random name from list.
-                fileName ??= GetAvailableFileName();
-            }
-            else
-            {
-                //
-                fileName ??= GetFormattedDateTimeStamp(namingFormat: namingFormat);
-            }
+            fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
             if (CheckIfFolderExist($"./{folderName}"))
@@ -287,26 +248,27 @@ namespace EasySaver.BitmapFile
             }
 
             //
-            bool fileExists = CheckIfFileExist(fileName);
+            bool fileExists = CheckIfFileExist(folderName);
 
+            //
             if (fileExists == false)
             {
                 //
-                (bool, Exception?) result = SaveSafe(path: fileName, bitmap: bitmap);
+                (bool, Exception?) result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
 
                 //
                 return result;
             }
-            else if(overwrite == false)
+            else if(overwrite == false && renameIfExists)
             {
                 //
-                for (int i = 0; i < 255; i++)
+                for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i})") == false)
                     {
                         //
-                        (bool, Exception?) result = SaveSafe(path: fileName, bitmap: bitmap);
+                        (bool, Exception?) result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
 
                         //
                         return result;
@@ -314,12 +276,12 @@ namespace EasySaver.BitmapFile
                 }
 
                 //
-                return (false, new ArgumentOutOfRangeException());
+                return (false, new ArgumentOutOfRangeException(paramName: null, message: MaxAttemptMessage(MethodBase.GetCurrentMethod()!.Name)));
             }
             else
             {
                 //
-                (bool, Exception?) result = SaveSafe(path: fileName, bitmap: bitmap);
+                (bool, Exception?) result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
 
                 //
                 return result;
