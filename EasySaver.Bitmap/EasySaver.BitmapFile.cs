@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Reflection;
 using System.Runtime.Versioning;
 using static EasySaver.Common.EasySaver;
@@ -50,7 +51,7 @@ namespace EasySaver.BitmapFile
         #endregion Saving
 
         /// <summary>
-        /// 
+        /// Save bitmap into default folder.
         /// </summary>
         /// <param name="bitmap"></param>
         /// <param name="fileName"></param>
@@ -105,7 +106,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// 
+        /// Save bitmap into given folder path.
         /// </summary>
         /// <param name="bitmap"></param>
         /// <param name="fileName"></param>
@@ -168,7 +169,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// 
+        /// Save bitmap default folder with try-catch mechanism.
         /// </summary>
         /// <param name="bitmap"></param>
         /// <param name="fileName"></param>
@@ -225,7 +226,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// 
+        /// Save bitmap into given folder path with try-catch mechanism.
         /// </summary>
         /// <param name="bitmap"></param>
         /// <param name="fileName"></param>

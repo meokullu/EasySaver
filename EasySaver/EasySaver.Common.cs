@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -31,8 +32,16 @@ namespace EasySaver.Common
 
         #endregion File paths
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="namingFormat"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         internal static string GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.DateTime)
         {
+            //
             if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.Date || namingFormat == NamingFormat.Time)
             {
                 //
@@ -41,7 +50,7 @@ namespace EasySaver.Common
             else if (namingFormat == NamingFormat.Custom)
             {
                 //
-                return fileName;
+                return string.IsNullOrWhiteSpace(fileName) ? "file" : fileName;
             }
             else if (namingFormat == NamingFormat.RandomName)
             {
@@ -50,6 +59,7 @@ namespace EasySaver.Common
             }
             else
             {
+                //
                 throw new Exception("NamingFormat is not correct");
             }
         }
@@ -163,6 +173,7 @@ namespace EasySaver.Common
         /// <returns></returns>
         public static bool PopulateRandomFileNameList(string[] fileNameList)
         {
+            //
             try
             {
                 // Write fileNameList into _randomFileNamePath
@@ -214,16 +225,16 @@ namespace EasySaver.Common
             //
             DateTime dateTime = GetDateTimeStamp();
 
-            //
+            // Date data.
             string year = dateTime.Date.Year.ToString();
             string month = dateTime.Date.Month.ToString();
             string day = dateTime.Date.Day.ToString();
 
-            //
-            string hour = dateTime.Date.Hour.ToString();
-            string minute = dateTime.Date.Minute.ToString();
-            string second = dateTime.Date.Second.ToString();
-            string millisecond = dateTime.Date.Millisecond.ToString();
+            // Time data.
+            string hour = dateTime.Hour.ToString();
+            string minute = dateTime.Minute.ToString();
+            string second = dateTime.Second.ToString();
+            string millisecond = dateTime.Millisecond.ToString();
 
             //
             if (namingFormat == NamingFormat.Time)
@@ -252,6 +263,11 @@ namespace EasySaver.Common
 
         #region Existing
 
+        /// <summary>
+        /// Check if file existing via System.IO.File.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>Returns true if the file does exist, returns false if the file doesn't exist.</returns>
         internal static bool CheckIfFileExist(string path)
         {
             //
@@ -267,6 +283,11 @@ namespace EasySaver.Common
             }
         }
 
+        /// <summary>
+        /// Check if folder is existing via System.IO.Folder. 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>Returns true if the folder does exist, returns false if the folder doesn't exist.</returns>
         internal static bool CheckIfFolderExist(string path)
         {
             //
