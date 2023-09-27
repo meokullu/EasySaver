@@ -11,15 +11,6 @@
     <FileVersion>1.0.0</FileVersion>
     <Version>1.0.0-alpha</Version>
     <Authors>Enes Okullu</Authors>
-    <Company>Enes Okullu</Company>
-    <Description>Easy Saver Text project is dependent on Easy Saver. It offers methods to save text files easily.</Description>
-    <Copyright>Enes Okullu</Copyright>
-    <PackageProjectUrl>meokullu.github.io/EasySaver/</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/meokullu/EasySaver/tree/master/EasySaver.Text</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>text; text-saving</PackageTags>
-    <PackageReleaseNotes>This is initial version of alpha.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -30,13 +21,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <WarningLevel>9999</WarningLevel>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EasySaver\EasySaver.Common.csproj" />
