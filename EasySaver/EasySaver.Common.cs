@@ -18,45 +18,53 @@ namespace EasySaver.Common
         internal static readonly byte _maxAttemptForRename = byte.MaxValue;
 
         /// <summary>
-        /// In case of reaching maximum attempt, this method create a message to indicate which method reached
+        /// In case of reaching maximum attempt, this method create a message to indicate which method reached.
         /// </summary>
-        internal static string MaxAttemptMessage(string methodName) => $"{methodName} reached maximum attempt ({_maxAttemptForRename})of renaming file that is about to save.";
+        internal static string MaxAttemptMessage(string methodName) => $"{methodName} reached maximum attempt ({_maxAttemptForRename}) of renaming file that is about to save.";
+
+        // Default text file extension.
+        internal static string _defaultTextExtension = ".txt";
 
         #region File paths
 
         // Path for pre-populated random file name list.
-        private static readonly string _defaultFileNamePath = "DefaultRandomFileNameList.txt";
+        private static readonly string defaultFileNamePath = @".\Data\DefaultRandomFileNameList.txt";
 
         // Path for random file list.
-        private static readonly string _randomFileNamePath = "RandomFileNameList.txt";
+        private static readonly string randomFileNamePath = @".\Data\RandomFileNameList.txt";
 
         #endregion File paths
 
         /// <summary>
-        /// 
+        /// Get a file name based on naming format.
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="namingFormat"></param>
         /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <exception cref="Exception">Throws if given namingFormat is not defined in NamingFormat enum llist.</exception>
         internal static string GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.DateTime)
         {
-            //
+            // The reason that extension is not added here, because of in case of repeatence filename might has a name like file(1).
+            // If extension would be added here, it would look like as file.txt(1).
+
+            // Checking if naming format is DateTime, Date or Time so GetFormattedDateTimeStamp() returns available file name.
             if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.Date || namingFormat == NamingFormat.Time)
             {
-                //
+                // Calls GetFormattedDateTimeStamp().
                 return GetFormattedDateTimeStamp(namingFormat: namingFormat);
             }
+            // If Custom is 
             else if (namingFormat == NamingFormat.Custom)
             {
-                //
+                // Check if fileName is null or white space. If it is, return "file" as default name it is not it returns fileName that is given by parameter.
+                // The reason of this checking is because empty space is not allowed as file name.
                 return string.IsNullOrWhiteSpace(fileName) ? "file" : fileName;
             }
-            else if (namingFormat == NamingFormat.RandomName)
-            {
-                // If file name is null bring random name from list.
-                return GetAvailableFileName();
-            }
+            //else if (namingFormat == NamingFormat.RandomName)
+            //{
+            //    // If file name is null bring random name from list.
+            //    return GetAvailableFileName();
+            //}
             else
             {
                 //
@@ -90,7 +98,7 @@ namespace EasySaver.Common
             /// <summary>
             /// File name will consist random name that chosen from populated or prepopulated name list.
             /// </summary>
-            RandomName = 5
+            //RandomName = 5
         }
 
         /// <summary>
@@ -105,7 +113,7 @@ namespace EasySaver.Common
         /// <summary>
         /// List of random file names.
         /// </summary>
-        internal static string[]? _randomFileNameList;
+        internal static string[]? randomFileNameList;
 
         /// <summary>
         /// Gets random name from list.
@@ -114,20 +122,20 @@ namespace EasySaver.Common
         internal static string GetAvailableFileName()
         {
             // Checking if list is null or empty.
-            if (_randomFileNameList == null || _randomFileNameList.Length == 0)
+            if (randomFileNameList == null || randomFileNameList.Length == 0)
             {
                 // Fetching data into list.
                 FetchRandomFileNameList();
             }
 
             //
-            int availableNameOptions = _randomFileNameList!.Length;
+            int availableNameOptions = randomFileNameList!.Length;
 
             // TODO: -1 for length?
             int indexOfAvailableName = new Random().Next(maxValue: availableNameOptions);
 
             //
-            string availableFileName = _randomFileNameList[indexOfAvailableName];
+            string availableFileName = randomFileNameList[indexOfAvailableName];
 
             //
             return availableFileName;
@@ -140,27 +148,27 @@ namespace EasySaver.Common
         private static void FetchRandomFileNameList()
         {
             // Checking if randomfilename is null or empty.
-            if (_randomFileNameList == null || _randomFileNameList.Length == 0)
+            if (randomFileNameList == null || randomFileNameList.Length == 0)
             {
                 // Read lines from file and populate _RandomFileNameList variable.
-                _randomFileNameList = File.ReadAllLines(_randomFileNamePath, Encoding.UTF8);
+                randomFileNameList = File.ReadAllLines(randomFileNamePath, Encoding.UTF8);
 
                 // Checking if _RandomFileNameList is null or empty again to determine if list is empty or corrupted.
-                if (_randomFileNameList == null || _randomFileNameList.Length == 0)
+                if (randomFileNameList == null || randomFileNameList.Length == 0)
                 {
                     // Read lines from file and populate _RandomFileNameList variable.
-                    _randomFileNameList = File.ReadAllLines(_defaultFileNamePath, Encoding.UTF8);
+                    randomFileNameList = File.ReadAllLines(defaultFileNamePath, Encoding.UTF8);
 
                     // Checking if _RandomFileNameList is still null or empty.
-                    if (_randomFileNameList == null || _randomFileNameList.Length == 0)
+                    if (randomFileNameList == null || randomFileNameList.Length == 0)
                     {
                         // Throwing exception to indicate file is missing or corrupted.
-                        throw new Exception($"File at {_defaultFileNamePath} is missing or corrupted", new NullReferenceException());
+                        throw new Exception($"File at {defaultFileNamePath} is missing or corrupted", new NullReferenceException());
                     }
                     else
                     {
                         // Fetching default random names into random names list.
-                        File.WriteAllLines(_randomFileNamePath, _randomFileNameList);
+                        File.WriteAllLines(randomFileNamePath, randomFileNameList);
                     }
                 }
             }
@@ -177,7 +185,7 @@ namespace EasySaver.Common
             try
             {
                 // Write fileNameList into _randomFileNamePath
-                File.WriteAllLines(_randomFileNamePath, fileNameList);
+                File.WriteAllLines(randomFileNamePath, fileNameList);
 
                 // Returning success to indicate writing was successful.
                 return true;
@@ -226,15 +234,15 @@ namespace EasySaver.Common
             DateTime dateTime = GetDateTimeStamp();
 
             // Date data.
-            string year = dateTime.Date.Year.ToString();
-            string month = dateTime.Date.Month.ToString();
-            string day = dateTime.Date.Day.ToString();
+            string year = dateTime.Date.ToString("yyyy");
+            string month = dateTime.Date.ToString("MM");
+            string day = dateTime.Date.ToString("dd");
 
             // Time data.
-            string hour = dateTime.Hour.ToString();
-            string minute = dateTime.Minute.ToString();
-            string second = dateTime.Second.ToString();
-            string millisecond = dateTime.Millisecond.ToString();
+            string hour = dateTime.ToString("HH");
+            string minute = dateTime.ToString("mm");
+            string second = dateTime.ToString("ss");
+            string millisecond = dateTime.ToString("fff");
 
             //
             if (namingFormat == NamingFormat.Time)
