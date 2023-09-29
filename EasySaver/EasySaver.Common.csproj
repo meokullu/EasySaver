@@ -12,11 +12,11 @@
     <FileVersion>1.0.0</FileVersion>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Version>1.0.0-alpha</Version>
+    <Version>1.0.0-alpha.1</Version>
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>File; Saving; Save; </PackageTags>
-    <PackageReleaseNotes>This is initial version of alpha version.</PackageReleaseNotes>
+    <PackageReleaseNotes>Default image extension variable is added. ".bmp"</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://meokullu.github.io/EasySaver/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/meokullu/EasySaver</RepositoryUrl>

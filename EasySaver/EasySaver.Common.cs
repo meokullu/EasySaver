@@ -25,6 +25,9 @@ namespace EasySaver.Common
         // Default text file extension.
         internal static string _defaultTextExtension = ".txt";
 
+        // Default image file extension.
+        internal static string _defaultImageExtension = ".bmp";
+
         #region File paths
 
         // Path for pre-populated random file name list.
