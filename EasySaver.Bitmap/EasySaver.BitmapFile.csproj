@@ -12,11 +12,26 @@
     <Title>Easy Saver Bitmap File</Title>
     <Company>Enes Okullu</Company>
     <Authors>Enes Okullu</Authors>
+    <Version>1.0.0-alpha.1</Version>
+    <Description>Easy Saver Bitmap is project dependent on Easy Saver for save bitmap file</Description>
+    <PackageProjectUrl>meokullu.github.io/EasySaver/</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/meokullu/EasySaver/tree/master/EasySaver.Bitmap</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>bitmap; bitmap-saving</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" />

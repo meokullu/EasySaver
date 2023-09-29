@@ -65,13 +65,13 @@ namespace EasySaver.BitmapFile
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
-            bool ifExist = CheckIfFileExist(path: $"./{fileName}");
+            bool ifExist = CheckIfFileExist(path: $"{fileName}{_defaultImageExtension}");
 
             //
             if (ifExist == false)
             {
                 //
-                Save(path: $"./{fileName}", bitmap: bitmap);
+                Save(path: $"./{fileName}{_defaultImageExtension}", bitmap: bitmap);
 
                 //
                 return true;
@@ -82,10 +82,10 @@ namespace EasySaver.BitmapFile
                 for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
-                    if (CheckIfFileExist(path: $"./{fileName}({i})") == false)
+                    if (CheckIfFileExist(path: $"{fileName}({i}){_defaultImageExtension}") == false)
                     {
                         //
-                        Save(path: $"./{fileName}", bitmap: bitmap);
+                        Save(path: $"./{fileName}({i}){_defaultImageExtension}", bitmap: bitmap);
 
                         //
                         return true;
@@ -98,7 +98,7 @@ namespace EasySaver.BitmapFile
             else
             {
                 //
-                Save(path: $"./{fileName}", bitmap: bitmap);
+                Save(path: $"./{fileName}{_defaultImageExtension}", bitmap: bitmap);
 
                 //
                 return true;
@@ -128,13 +128,13 @@ namespace EasySaver.BitmapFile
             }
 
             //
-            bool ifExists = CheckIfFileExist(path: $"{folderName}/{fileName}");
+            bool ifExists = CheckIfFileExist(path: $"{folderName}/{fileName}{_defaultImageExtension}");
 
             //
             if (ifExists == false)
             {
                 //
-                Save(path: $"./{folderName}/{fileName}", bitmap: bitmap);
+                Save(path: $"./{folderName}/{fileName}{_defaultImageExtension}", bitmap: bitmap);
 
                 //
                 return true;
@@ -145,10 +145,10 @@ namespace EasySaver.BitmapFile
                 for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
-                    if (CheckIfFileExist(path: $"{folderName}/{fileName}({i})"))
+                    if (CheckIfFileExist(path: $"{folderName}/{fileName}({i}){_defaultImageExtension}") == false)
                     {
                         //
-                        Save(path: $"./{folderName}/{fileName}({i})", bitmap: bitmap);
+                        Save(path: $"./{folderName}/{fileName}({i}){_defaultImageExtension}", bitmap: bitmap);
 
                         //
                         return true;
@@ -161,7 +161,7 @@ namespace EasySaver.BitmapFile
             else
             {
                 //
-                Save(path: $"./{fileName}", bitmap: bitmap);
+                Save(path: $"./{folderName}/{fileName}{_defaultImageExtension}", bitmap: bitmap);
 
                 //
                 return true;
@@ -184,13 +184,13 @@ namespace EasySaver.BitmapFile
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
-            bool fileExists = CheckIfFileExist(path: $"{fileName}");
+            bool fileExists = CheckIfFileExist(path: $"{fileName}{_defaultImageExtension}");
 
             //
             if (fileExists == false)
             {
                 //
-                (bool, Exception?) _result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
+                (bool, Exception?) _result = SaveSafe(path: $"./{fileName}{_defaultImageExtension}", bitmap: bitmap);
 
                 //
                 return _result;
@@ -201,10 +201,10 @@ namespace EasySaver.BitmapFile
                 for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
-                    if (CheckIfFileExist(path: $"{fileName}({i})") == false)
+                    if (CheckIfFileExist(path: $"{fileName}({i}){_defaultImageExtension}") == false)
                     {
                         //
-                        (bool, Exception?) result = SaveSafe(path: $"{fileName}({i})", bitmap: bitmap);
+                        (bool, Exception?) result = SaveSafe(path: $"{fileName}({i}){_defaultImageExtension}", bitmap: bitmap);
 
                         //
                         return result;
@@ -218,7 +218,7 @@ namespace EasySaver.BitmapFile
             else
             {
                 //
-                (bool, Exception?) result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
+                (bool, Exception?) result = SaveSafe(path: $"./{fileName}{_defaultImageExtension}", bitmap: bitmap);
 
                 //
                 return result;
@@ -242,20 +242,20 @@ namespace EasySaver.BitmapFile
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             //
-            if (CheckIfFolderExist($"./{folderName}"))
+            if (CheckIfFolderExist($"./{folderName}") == false)
             {
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
                 _ = System.IO.Directory.CreateDirectory($"{folderName}\\");
             }
 
             //
-            bool fileExists = CheckIfFileExist($"./{folderName}/{fileName}");
+            bool fileExists = CheckIfFileExist($"{folderName}/{fileName}");
 
             //
             if (fileExists == false)
             {
                 //
-                (bool, Exception?) result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
+                (bool, Exception?) result = SaveSafe(path: $"./{folderName}/{fileName}{_defaultImageExtension}", bitmap: bitmap);
 
                 //
                 return result;
@@ -266,10 +266,10 @@ namespace EasySaver.BitmapFile
                 for (int i = 0; i < _maxAttemptForRename; i++)
                 {
                     //
-                    if (CheckIfFileExist(path: $"{folderName}/{fileName}({i})") == false)
+                    if (CheckIfFileExist(path: $"{folderName}/{fileName}({i}){_defaultImageExtension}") == false)
                     {
                         //
-                        (bool, Exception?) result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
+                        (bool, Exception?) result = SaveSafe(path: $"{folderName}{fileName}{_defaultImageExtension}", bitmap: bitmap);
 
                         //
                         return result;
@@ -282,7 +282,7 @@ namespace EasySaver.BitmapFile
             else
             {
                 //
-                (bool, Exception?) result = SaveSafe(path: $"./{fileName}", bitmap: bitmap);
+                (bool, Exception?) result = SaveSafe(path: $"./{folderName}/{fileName}{_defaultImageExtension}", bitmap: bitmap);
 
                 //
                 return result;
