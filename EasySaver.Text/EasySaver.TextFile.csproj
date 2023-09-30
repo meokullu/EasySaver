@@ -20,6 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>text; text-saving</PackageTags>
     <PackageReleaseNotes>Default default namingFormat was changed to NamingFormat.DateTime for all methods.</PackageReleaseNotes>
+    <ApplicationIcon>Resources\icon256.ico</ApplicationIcon>
+    <PackageIcon>icon128.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -32,6 +34,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Resources\icon256.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -40,6 +46,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EasySaver\EasySaver.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\icon128.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

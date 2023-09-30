@@ -22,12 +22,19 @@
     <PackageReleaseNotes>RenameIfExists parameters now have true value as default
     folderName default value "Data" added into Save() as it is on SaveSafe()
     namingFormat's default value is .DateTime for all methods.
+    Icon was added.
     </PackageReleaseNotes>
+    <ApplicationIcon>Resources\icon256.ico</ApplicationIcon>
+    <PackageIcon>icon128.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>True</Optimize>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\icon256.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\README.md">
@@ -42,6 +49,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EasySaver\EasySaver.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\icon128.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
