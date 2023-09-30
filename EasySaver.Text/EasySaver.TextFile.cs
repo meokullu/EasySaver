@@ -105,7 +105,7 @@ namespace EasySaver.TextFile
         /// <param name="namingFormat"></param>
         /// <param name="overwrite"></param>
         /// <param name="renameIfExists"></param>
-        public static bool Save(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.Custom, bool overwrite = false, bool renameIfExists = true)
+        public static bool Save(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
             //
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
@@ -167,7 +167,7 @@ namespace EasySaver.TextFile
         /// <param name="overwrite"></param>
         /// <param name="renameIfExists"></param>
         /// <returns></returns>
-        public static (bool, Exception?) SaveSafe(string text, string fileName, NamingFormat namingFormat = NamingFormat.Custom, bool overwrite = false, bool renameIfExists = true)
+        public static (bool, Exception?) SaveSafe(string text, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
             //
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
@@ -223,7 +223,7 @@ namespace EasySaver.TextFile
         /// <param name="overwrite"></param>
         /// <param name="renameIfExists"></param>
         /// <returns></returns>
-        public static (bool, Exception?) SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.Custom, bool overwrite = false, bool renameIfExists = true)
+        public static (bool, Exception?) SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
             //
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
