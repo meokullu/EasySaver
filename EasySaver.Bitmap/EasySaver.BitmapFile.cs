@@ -115,7 +115,7 @@ namespace EasySaver.BitmapFile
         /// <param name="overwrite"></param>
         /// <param name="renameIfExists"></param>
         [SupportedOSPlatform("windows")]
-        public static bool Save(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat = NamingFormat.Custom, bool overwrite = false, bool renameIfExists = false)
+        public static bool Save(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
             //
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
@@ -178,7 +178,7 @@ namespace EasySaver.BitmapFile
         /// <param name="renameIfExists"></param>
         /// <returns></returns>
         [SupportedOSPlatform("windows")]
-        public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, NamingFormat namingFormat = NamingFormat.Custom, bool overwrite = false, bool renameIfExists = true)
+        public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
             //
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
@@ -236,7 +236,7 @@ namespace EasySaver.BitmapFile
         /// <param name="renameIfExists"></param>
         /// <returns></returns>
         [SupportedOSPlatform("windows")]
-        public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.Custom, bool overwrite = false, bool renameIfExists = true) 
+        public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true) 
         {
             //
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
