@@ -12,7 +12,7 @@
     <FileVersion>1.0.0</FileVersion>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Version>1.0.0-alpha.1</Version>
+    <Version>1.0.0-alpha.2</Version>
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>File; Saving; Save; </PackageTags>
@@ -51,7 +51,7 @@
     <None Update="Data\RandomFileNameList.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Resources\common128.png">
+    <None Include="Resources\common128.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
