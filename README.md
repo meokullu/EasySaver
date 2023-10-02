@@ -9,10 +9,19 @@ EasySaver has one common and two external projects. Common project consists seve
 ## Listed Methods
 
 ### Common
+
 ### Bitmap
+[README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.Bitmap/README.md#listed-methods)
 ### Text
+[README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.Text/README.md#listed-methods)
 
 ## Version History
+
+* 1.0.0-alpha.3
+    * Updated README
+
+* 1.0.0-alpha.2
+    * Licence is added.
 
 * 1.0.0-alpha.1
     * Default image extension is added. ".bmp"

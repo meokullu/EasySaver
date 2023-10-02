@@ -12,17 +12,14 @@
     <Title>Easy Saver Bitmap File</Title>
     <Company>Enes Okullu</Company>
     <Authors>Enes Okullu</Authors>
-    <Version>1.0.0-alpha.2</Version>
+    <Version>1.0.0-alpha.3</Version>
     <Description>Easy Saver Bitmap is project dependent on Easy Saver for save bitmap file</Description>
     <PackageProjectUrl>meokullu.github.io/EasySaver/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/meokullu/EasySaver/tree/master/EasySaver.Bitmap</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>bitmap; bitmap-saving</PackageTags>
-    <PackageReleaseNotes>RenameIfExists parameters now have true value as default
-    folderName default value "Data" added into Save() as it is on SaveSafe()
-    namingFormat's default value is .DateTime for all methods.
-    Icon was added.
+    <PackageReleaseNotes>Licence is added.
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon256.ico</ApplicationIcon>
     <PackageIcon>icon128.png</PackageIcon>
@@ -42,10 +39,6 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +51,13 @@
 
   <ItemGroup>
     <None Include="Resources\icon128.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
