@@ -12,11 +12,13 @@
     <FileVersion>1.0.0</FileVersion>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Version>1.0.0-alpha.3</Version>
+    <Version>1.0.0-alpha.4</Version>
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>File; Saving; Save; </PackageTags>
-    <PackageReleaseNotes>Licene is added.</PackageReleaseNotes>
+    <PackageTags>File; Saving; Save;</PackageTags>
+    <PackageReleaseNotes>v1.0.0-alpha.4 preparing for Nuget refresh.
+    
+    </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://meokullu.github.io/EasySaver/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/meokullu/EasySaver</RepositoryUrl>

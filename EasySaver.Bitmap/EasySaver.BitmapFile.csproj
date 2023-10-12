@@ -12,14 +12,15 @@
     <Title>Easy Saver Bitmap File</Title>
     <Company>Enes Okullu</Company>
     <Authors>Enes Okullu</Authors>
-    <Version>1.0.0-alpha.3</Version>
+    <Version>1.0.0-alpha.4</Version>
     <Description>Easy Saver Bitmap is project dependent on Easy Saver for save bitmap file</Description>
     <PackageProjectUrl>meokullu.github.io/EasySaver/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/meokullu/EasySaver/tree/master/EasySaver.Bitmap</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>bitmap; bitmap-saving</PackageTags>
-    <PackageReleaseNotes>Licence is added.
+    <PackageReleaseNotes>v1.0.0-alpha.4 prepare for Nuget refresh.
+
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon256.ico</ApplicationIcon>
     <PackageIcon>icon128.png</PackageIcon>

@@ -1,12 +1,12 @@
-# EasySaver
+## EasySaver TextFile
 
 EasySaver is a project to save files easily (Bitmap, text) with custom or auto renaming.
 
-## Description
+### Description
 
 This is README file for EasySaver.TextFile.
 
-## Listed Methods
+### Listed Methods
 ```
 Save(string text, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
 ```
@@ -20,7 +20,7 @@ SaveSafe(string text, string fileName, NamingFormat namingFormat = NamingFormat.
 SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
 ```
 
-## Version History
+### Version History
 
 * 1.0.0-alpha.2
     * Updated README
@@ -31,13 +31,13 @@ SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat 
 * 1.0.0-alpha
     * Initial version
 
-## Task list
+### Task list
 
-## Licence
+### Licence
 [MIT license](https://github.com/meokullu/EasySaver/blob/master/LICENSE)
 
-## Authors
+### Authors
 Twitter: Enes Okullu [@enesokullu](https://twitter.com/EnesOkullu)
 
-## Help
+### Help
 Twitter: Enes Okullu [@enesokullu](https://twitter.com/EnesOkullu)
