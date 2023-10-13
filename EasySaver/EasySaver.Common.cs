@@ -98,9 +98,9 @@ namespace EasySaver.Common
             /// File name will consist date data.
             /// </summary>
             Date = 4,
-            /// <summary>
-            /// File name will consist random name that chosen from populated or prepopulated name list.
-            /// </summary>
+            //// <summary>
+            //// File name will consist random name that chosen from populated or prepopulated name list.
+            //// </summary>
             //RandomName = 5
         }
 

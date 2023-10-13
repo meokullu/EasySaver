@@ -16,8 +16,7 @@
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>File; Saving; Save;</PackageTags>
-    <PackageReleaseNotes>v1.0.0-alpha.4 preparing for Nuget refresh.
-    
+    <PackageReleaseNotes>v1.0.0-alpha.4 preparing for Nuget refresh.    
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://meokullu.github.io/EasySaver/</PackageProjectUrl>
