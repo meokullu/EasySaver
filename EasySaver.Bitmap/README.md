@@ -2,6 +2,8 @@
 
 EasySaver is a project to save files easily (Bitmap, text) with custom or auto renaming.
 
+[Download on NuGet gallery](https://www.nuget.org/packages/EasySaver.BitmapFile/)
+
 ### Description
 
 This is README file for EasySaver.BitmapFile.
@@ -21,7 +23,7 @@ SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingForma
 ```
 
 ### Version History
-See Changelog 'link'
+See Changelog [EasySaver.BitmapFile Changelog](https://github.com/meokullu/EasySaver/blob/master/EasySaver.Bitmap/CHANGELOG.md)
 
 ### Task list
 
