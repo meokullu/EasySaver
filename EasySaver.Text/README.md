@@ -6,7 +6,7 @@ EasySaver is a project to save files easily (Bitmap, text) with custom or auto r
 
 This is README file for EasySaver.TextFile.
 
-### Listed Methods
+### Example Usage
 ```
 Save(string text, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
 ```
@@ -21,15 +21,7 @@ SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat 
 ```
 
 ### Version History
-
-* 1.0.0-alpha.2
-    * Updated README
-
-* 1.0.0-alpha.1
-    * Updated README
-
-* 1.0.0-alpha
-    * Initial version
+See Changelog 'link'
 
 ### Task list
 

@@ -1,4 +1,4 @@
-## Changelog
+# Changelog
 
 ## [Unreleased]
 
@@ -10,18 +10,16 @@
 
 ## [1.0.0-alpha.3]
 
-### Changed
-* Updated README
+### Added
+* Updated README.
 
 ## [1.0.0-alpha.2]
 
-### Changed
-* Updated README
+### Added
+* Licence is added.
 
 ## [1.0.0-alpha.1]
-
-### Changed
-* Updated README
+* Default image extension is added. ".bmp"
 
 ## [1.0.0-alpha]
 * Initial version.

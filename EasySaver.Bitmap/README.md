@@ -21,18 +21,7 @@ SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingForma
 ```
 
 ### Version History
-
-* 1.0.0-alpha.3
-    * Updated README
-
-* 1.0.0-alpha.2
-    * Updated README
-
-* 1.0.0-alpha.1
-    * Updated README
-
-* 1.0.0-alpha
-    * Initial version
+See Changelog 'link'
 
 ### Task list
 
