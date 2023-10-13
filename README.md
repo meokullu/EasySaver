@@ -2,6 +2,8 @@
 
 EasySaver is a project to save files easily (Bitmap, text) with custom or auto renaming.
 
+[Download on NuGet gallery](https://www.nuget.org/packages/EasySaver/)
+
 ### Description
 
 EasySaver has one common and two external projects. Common project consists several internal, private and public methods. EasySaver.BitmapFile and EasySaver.TextFile have public methods.
@@ -17,7 +19,7 @@ EasySaver has one common and two external projects. Common project consists seve
 [README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.Text/README.md#listed-methods)
 
 ### Version History
-See changelog 'link'
+See changelog [EasySaver Changelog](https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
 
 ### Task list
 
