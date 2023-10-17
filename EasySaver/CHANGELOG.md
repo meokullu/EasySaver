@@ -1,5 +1,6 @@
-# Changelog
+# EasySaver.Common Changelog
 
+<!--
 ## [Unreleased]
 
 ### Added
@@ -7,6 +8,7 @@
 ### Changed
 
 ### Removed
+-->
 
 ## [1.0.0-alpha.3]
 

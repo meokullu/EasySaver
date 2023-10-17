@@ -5,9 +5,9 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySaver.Common", "EasySaver\EasySaver.Common.csproj", "{FFF250EB-430B-4CDF-99FD-D6A4438AAAEC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySaver.TextFile", "EasySaver.Text\EasySaver.TextFile.csproj", "{BC1CB09D-BCEC-4864-A724-36780CC08E90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySaver.TextFile", "EasySaver.TextFile\EasySaver.TextFile.csproj", "{BC1CB09D-BCEC-4864-A724-36780CC08E90}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySaver.BitmapFile", "EasySaver.Bitmap\EasySaver.BitmapFile.csproj", "{04C938F5-ED4E-4CFD-BE48-FCE8ECF0859D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySaver.BitmapFile", "EasySaver.BitmapFile\EasySaver.BitmapFile.csproj", "{04C938F5-ED4E-4CFD-BE48-FCE8ECF0859D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FFF250EB-430B-4CDF-99FD-D6A4438AAAEC} = {FFF250EB-430B-4CDF-99FD-D6A4438AAAEC}
 	EndProjectSection
