@@ -21,7 +21,6 @@
     <PackageTags>text; text-saving</PackageTags>
     <PackageReleaseNotes>
       v1.0.0-alpha.3 preparing for Nuget refresh.
-
       See changelog [Changelog](https://github.com/meokullu/EasySaver/blob/master/EasySaver.TextFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon256.ico</ApplicationIcon>
