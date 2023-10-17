@@ -22,6 +22,7 @@ EasySaver has one common and two external projects. Common project consists seve
 See changelog [EasySaver Changelog](https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
 
 ### Task list
+* Create an issue or check task list: [Issues](https://github.com/meokullu/EasySaver/issues)
 
 ### Licence
 [MIT license](https://github.com/meokullu/EasySaver/blob/master/LICENSE)

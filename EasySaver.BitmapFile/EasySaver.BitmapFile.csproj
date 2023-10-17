@@ -19,8 +19,10 @@
     <RepositoryUrl>https://github.com/meokullu/EasySaver/tree/master/EasySaver.Bitmap</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>bitmap; bitmap-saving</PackageTags>
-    <PackageReleaseNotes>v1.0.0-alpha.4 prepare for Nuget refresh.
+    <PackageReleaseNotes>
+      v1.0.0-alpha.4 prepare for Nuget refresh.
 
+      See changelog [Changelog](https://github.com/meokullu/EasySaver/blob/master/EasySaver.BitmapFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon256.ico</ApplicationIcon>
     <PackageIcon>icon128.png</PackageIcon>
