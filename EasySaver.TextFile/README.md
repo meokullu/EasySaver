@@ -26,6 +26,7 @@ SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat 
 See Changelog [EasySaver.TextFile Changelog](https://github.com/meokullu/EasySaver/blob/master/EasySaver.Text/CHANGELOG.md)
 
 ### Task list
+* Create an issue or check task list: [Issues](https://github.com/meokullu/EasySaver/issues)
 
 ### Licence
 [MIT license](https://github.com/meokullu/EasySaver/blob/master/LICENSE)

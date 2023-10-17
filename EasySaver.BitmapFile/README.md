@@ -23,9 +23,10 @@ SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingForma
 ```
 
 ### Version History
-See Changelog [EasySaver.BitmapFile Changelog](https://github.com/meokullu/EasySaver/blob/master/EasySaver.Bitmap/CHANGELOG.md)
+See Changelog [EasySaver.BitmapFile Changelog](https://github.com/meokullu/EasySaver/blob/master/EasySaver.BitmapFile/CHANGELOG.md)
 
 ### Task list
+* Create an issue or check task list: [Issues](https://github.com/meokullu/EasySaver/issues)
 
 ### Licence
 [MIT license](https://github.com/meokullu/EasySaver/blob/master/LICENSE)
