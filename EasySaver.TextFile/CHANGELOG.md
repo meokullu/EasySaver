@@ -1,5 +1,6 @@
-## Changelog
+## EasySaver.TextFile Changelog
 
+<!--
 ## [Unreleased]
 
 ### Added
@@ -7,11 +8,18 @@
 ### Changed
 
 ### Removed
+-->
 
-## [1.0.0-alpha.3]
+## [1.0.0-alpha.3] -
+
+### Added
+* Download Nuget link added on README.
+* CHANGELOG link added under Version History on README.
+* Tags added to PackageTags.
 
 ### Changed
 * Updated README
+* Folder name changed from EasySaver.Text to EasySaver.TextFile.
 
 ## [1.0.0-alpha.2]
 

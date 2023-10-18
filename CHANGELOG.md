@@ -1,4 +1,4 @@
-## Changelog
+## EasySaver Changelog
 
 <!--
 ## [Unreleased]
@@ -10,7 +10,14 @@
 ### Removed
 -->
 
-## [1.0.0-alpha.3]
+## [1.0.0-alpha.4]
+
+### Added
+* CHANGELOG link added under Version History on README.
+* EasySaver.BitmapFile README link added.
+* EasySaver.TextFile README link added.
+
+## [1.0.0-alpha.3] -
 
 ### Added
 * Updated README.
