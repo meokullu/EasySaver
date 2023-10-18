@@ -18,7 +18,7 @@
     <PackageTags>File; Saving; Save;</PackageTags>
     <PackageReleaseNotes>
       v1.0.0-alpha.4 preparing for Nuget refresh.
-      See changelog [Changelog](https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
+      See changelog (https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://meokullu.github.io/EasySaver/</PackageProjectUrl>
@@ -47,6 +47,10 @@
       <PackagePath>\</PackagePath>
     </None>
     <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\CHANGELOG.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
