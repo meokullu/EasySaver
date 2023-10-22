@@ -1,22 +1,44 @@
 ## EasySaver
 
-EasySaver is a project to save files easily (Bitmap, text) with custom or auto renaming.
+EasySaver is a multi-solution package to save bitmap image files and text files with custom, date, time, datetime, or auto renaming.
 
 [Download on NuGet gallery](https://www.nuget.org/packages/EasySaver/)
 
 ### Description
 
-EasySaver has one common and two external projects. Common project consists several internal, private and public methods. EasySaver.BitmapFile and EasySaver.TextFile have public methods.
+EasySaver has one common and two external packages. Common package have several internal, private and public methods. Via these methods using [EasySaver.BitmapFile](https://github.com/meokullu/EasySaver/tree/master/EasySaver.BitmapFile) or [EasySaver.TextFile](https://github.com/meokullu/EasySaver/tree/master/EasySaver.TextFile) are easy.
 
-### Example Usage
+### Naming Formats
 
-### Common
+#### Custom
+```
+NamingFormat.Custom
+```
 
-### Bitmap
-[README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.Bitmap/README.md#listed-methods)
+#### Time hour-minute-second-millisecond
+```
+NamingFormat.Time
+```
 
-### Text
-[README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.Text/README.md#listed-methods)
+#### Date year-month-day
+```
+NamingFormat.Date
+```
+
+#### DateTime year-month-day-hour-minute-second-millisecond
+```
+NamingFormat.DateTime
+```
+
+#### Random (Not Available)
+
+To check listed/unlisted methods, example of output visit wiki page. [EasySaver Wiki](https://github.com/meokullu/EasySaver/wiki)
+
+### BitmapFile
+[README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.BitmapFile/README.md#listed-methods)
+
+### TextFile
+[README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.TextFile/README.md#listed-methods)
 
 ### Version History
 See changelog [EasySaver Changelog](https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
