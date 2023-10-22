@@ -12,12 +12,12 @@
     <FileVersion>1.0.0</FileVersion>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Version>1.0.0-alpha.4</Version>
+    <Version>1.0.0-alpha.5</Version>
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>File; Saving; Save;</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0-alpha.4 preparing for Nuget refresh.
+      v1.0.0-alpha.5 new icon.
       See changelog (https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>

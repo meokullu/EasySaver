@@ -9,7 +9,7 @@
     <Title>Easy Saver Text File</Title>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
-    <Version>1.0.0-alpha.3</Version>
+    <Version>1.0.0-alpha.4</Version>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
     <Description>Easy Saver Text project is dependent on Easy Saver. It offers methods to save text files easily.</Description>
@@ -20,11 +20,11 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>text; text-saving; file; file-saving</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0-alpha.3 preparing for Nuget refresh.
+      v1.0.0-alpha.4 new icon.
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.TextFile/CHANGELOG.md)
     </PackageReleaseNotes>
-    <ApplicationIcon>Resources\icon256.ico</ApplicationIcon>
-    <PackageIcon>icon128.png</PackageIcon>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
@@ -38,7 +38,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Resources\icon256.ico" />
+    <Content Include="Resources\icon.ico" />
   </ItemGroup>
 
   
@@ -47,7 +47,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Resources\icon128.png">
+    <None Include="Resources\icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
