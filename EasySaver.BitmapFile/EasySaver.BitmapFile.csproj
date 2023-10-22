@@ -20,11 +20,11 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>bitmap; bitmap-saving; file-saving; file</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0-alpha.4 prepare for Nuget refresh.
+      v1.0.0-alpha.5 new icon
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.BitmapFile/CHANGELOG.md)
     </PackageReleaseNotes>
-    <ApplicationIcon>Resources\icon256.ico</ApplicationIcon>
-    <PackageIcon>icon128.png</PackageIcon>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
@@ -33,7 +33,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Resources\icon256.ico" />
+    <Content Include="Resources\icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,7 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Resources\icon128.png">
+    <None Include="Resources\icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

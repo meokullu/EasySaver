@@ -10,7 +10,12 @@
 ### Removed
 -->
 
-## [1.0.0-alpha.4] -
+## [1.0.0-alpha.5]
+
+### Changed
+* New icon.
+
+## [1.0.0-alpha.4]
 
 ### Added
 * Licence added.
