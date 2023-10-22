@@ -14,6 +14,7 @@
 
 ### Changed
 * New icon.
+* README updated
 
 ## [1.0.0-alpha.4]
 
