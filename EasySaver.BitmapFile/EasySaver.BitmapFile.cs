@@ -53,7 +53,7 @@ namespace EasySaver.BitmapFile
         [SupportedOSPlatform("windows")]
         public static bool Save(Bitmap bitmap, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
-            // Calls GetFileName to decide fileName.
+            // Calls GetFileName() to decide fileName with adding extension at the end.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             // Checking if file exist via CheckIfFileExist().
@@ -107,10 +107,11 @@ namespace EasySaver.BitmapFile
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
+        /// <returns>True or false.</returns>
         [SupportedOSPlatform("windows")]
         public static bool Save(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
-            // Calls GetFileName to decide fileName.
+            // Calls GetFileName() to decide fileName.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             // Checking if folder exists.
@@ -166,15 +167,15 @@ namespace EasySaver.BitmapFile
         /// Save bitmap default folder with try-catch mechanism.
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
-        /// <param name="fileName">>Name of file when NamingFormat is Custom.</param>
+        /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
-        /// <returns></returns>
+        /// <returns>True or false with exception.</returns>
         [SupportedOSPlatform("windows")]
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
         {
-            // Calls GetFileName to decide fileName.
+            // Calls GetFileName() to decide fileName.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             // Checking if file exist via CheckIfFileExist().
@@ -229,11 +230,11 @@ namespace EasySaver.BitmapFile
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
-        /// <returns></returns>
+        /// <returns>True or false with exception.</returns>
         [SupportedOSPlatform("windows")]
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true) 
         {
-            // Calls GetFileName to decide fileName.
+            // Calls GetFileName() to decide fileName.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             // Checking if folder exists.
