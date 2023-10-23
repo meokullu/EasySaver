@@ -20,7 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>text; text-saving; file; file-saving</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0-alpha.4 new icon.
+      v1.0.0-alpha.4
+      New icon.
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.TextFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>

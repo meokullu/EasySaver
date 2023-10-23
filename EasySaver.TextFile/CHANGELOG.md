@@ -12,6 +12,10 @@
 
 ## [1.0.0-alpha.4]
 
+### Added
+* Summaries to methods.
+* Comments to processes.
+
 ### Changed
 * New icon.
 * README updated.
