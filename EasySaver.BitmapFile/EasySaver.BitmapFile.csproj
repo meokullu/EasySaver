@@ -20,7 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>bitmap; bitmap-saving; file-saving; file</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0-alpha.5 new icon
+      v1.0.0-alpha.5
+      New icon
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.BitmapFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
