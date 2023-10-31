@@ -59,10 +59,10 @@ namespace EasySaver.TextFile
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             // Checking if file exist via CheckIfFileExist().
-            bool _fileExists = CheckIfFileExist(path: $"{fileName}{_defaultTextExtension}");
+            bool fileExists = CheckIfFileExist(path: $"{fileName}{_defaultTextExtension}");
 
             // Checking if file doesn't exist.
-            if (_fileExists == false)
+            if (fileExists == false)
             {
                 // Saving file via WriteViaStreamWriter().
                 WriteViaStreamWriter(path: $"./{fileName}{_defaultTextExtension}", text: text);
