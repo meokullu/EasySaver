@@ -9,7 +9,7 @@
     <Title>Easy Saver Text File</Title>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
-    <Version>1.0.0-alpha.4</Version>
+    <Version>1.0.0-alpha.5</Version>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
     <Description>Easy Saver Text project is dependent on Easy Saver. It offers methods to save text files easily.</Description>
@@ -20,8 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>text; text-saving; file; file-saving</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0-alpha.4
-      New icon.
+      v1.0.0-alpha.5
+      Additional methods are provided and some methods are deprecated.
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.TextFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
