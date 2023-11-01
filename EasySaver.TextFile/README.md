@@ -10,16 +10,16 @@ This is README file for EasySaver.TextFile.
 
 ### Example Usage
 ```
-Save(string text, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
+Save(string text)
 ```
 ```
-Save(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
+Save(string text, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
 ```
 ```
-SaveSafe(string text, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
+SaveToFolder(string text)
 ```
 ```
-SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
+SaveToFolder(string text, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
 ```
 
 To check listed/unlisted methods, example of output visit wiki page. [EasySaver Wiki](https://github.com/meokullu/EasySaver/wiki)
