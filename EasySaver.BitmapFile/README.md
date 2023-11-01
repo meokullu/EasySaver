@@ -10,16 +10,13 @@ This is README file for EasySaver.BitmapFile.
 
 ### Listed Methods
 ```
-Save(Bitmap bitmap, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
+Save(Bitmap bitmap)
 ```
 ```
-Save(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
+Save(Bitmap bitmap, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
 ```
 ```
-SaveSafe(Bitmap bitmap, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
-```
-```
-SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
+Save(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
 ```
 
 To check listed/unlisted methods, example of output visit wiki page. [EasySaver Wiki](https://github.com/meokullu/EasySaver/wiki)
