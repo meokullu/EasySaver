@@ -10,7 +10,7 @@ This is README file for EasySaver.TextFile.
 
 ### Example Usage
 ```
-Save(string text, string fileName, NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
+Save(string text)
 ```
 ```
 Save(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
