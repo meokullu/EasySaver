@@ -1,18 +1,19 @@
 ## EasySaver.TextFile Changelog
+[![EasySaver.TextFile](https://img.shields.io/nuget/v/EasySaver.TextFile.svg)](https://www.nuget.org/packages/EasySaver.TextFile/)
 
 <!--
-## [Unreleased]
+### [Unreleased]
 
-### Added
+#### Added
 
-### Changed
+#### Changed
 
-### Removed
+#### Removed
 -->
 
-## [1.0.0-alpha.5]
+### [1.0.0-alpha.5]
 
-### Added
+#### Added
 * `Save(string text)` method added.
 * `Save(string text, string fileName)`method added.
 * `Save(string text, string fileName, NamingFormat namingFormat)` method added.
@@ -39,45 +40,45 @@
 
 * Default provided values are listed as properties now.
 
-### Changed
+#### Changed
 * `Save(string text, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExist)` method's default parameters are removed. NamingFormat, overwrite, renameIfExist had default parameters NamingFormat.DateTime, false, true respectively.
 * `SaveSafe(string text, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExist)` method's default parameters are removed. NamingFormat, overwrite, renameIfExist had default parameters NamingFormat.DateTime, false, true respectively.
 * Typo fixed.
 
-### Removed
+#### Removed
 * `Save(string text, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method is deprecated. You can use `SaveToFolder(string text, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
 * `SaveSafe(string text, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method is deprecated. You can use `SaveToFolderSafe(string text, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
 
-## [1.0.0-alpha.4]
+### [1.0.0-alpha.4]
 
 ### Added
 * Summaries to methods.
 * Comments to processes.
 
-### Changed
+#### Changed
 * New icon.
 * README updated.
 
-## [1.0.0-alpha.3]
+### [1.0.0-alpha.3]
 
-### Added
+#### Added
 * Download Nuget link added on README.
 * CHANGELOG link added under Version History on README.
 * Tags added to PackageTags.
 
-### Changed
+#### Changed
 * Updated README
 * Folder name changed from EasySaver.Text to EasySaver.TextFile.
 
-## [1.0.0-alpha.2]
+### [1.0.0-alpha.2]
 
-### Changed
+#### Changed
 * Updated README
 
-## [1.0.0-alpha.1]
+### [1.0.0-alpha.1]
 
-### Changed
+#### Changed
 * Updated README
 
-## [1.0.0-alpha]
-* Initial version.
+### [1.0.0-alpha]
+Initial version.
