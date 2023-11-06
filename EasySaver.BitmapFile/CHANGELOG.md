@@ -11,6 +11,13 @@
 #### Removed
 -->
 
+### [1.0.0-alpha.7]
+
+#### Changed
+* New design README.
+* New design CHANGELOG.
+* Added method references to summaries.
+
 ### [1.0.0-alpha.6]
 
 #### Added

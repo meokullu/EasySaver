@@ -21,7 +21,7 @@ namespace EasySaver.BitmapFile
             bitmap.Save(path);
         }
 
-        // Saving file via Image.File() with try-catch exception.
+        // Saving file via Image.File() with try-catch exception. Calls Save(string path, Bitmap bitmap)
         private static (bool, Exception?) SaveSafe(string path, Bitmap bitmap)
         {
             try
@@ -61,7 +61,7 @@ namespace EasySaver.BitmapFile
         #region Save to default path.
 
         /// <summary>
-        /// Save bitmap into path with naming.
+        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false.</returns>
@@ -71,7 +71,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into path with naming.
+        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -82,7 +82,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into path with naming.
+        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param> 
@@ -94,7 +94,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into path with naming.
+        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -168,7 +168,7 @@ namespace EasySaver.BitmapFile
         #region Save to folder path.
 
         /// <summary>
-        /// Save bitmap into given folder path with naming.
+        /// Save bitmap into given folder path with naming. Calls <see cref="SaveToFolder(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false.</returns>
@@ -178,7 +178,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into given folder path with naming.
+        /// Save bitmap into given folder path with naming. Calls <see cref="SaveToFolder(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
@@ -189,7 +189,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into given folder path with naming.
+        /// Save bitmap into given folder path with naming. Calls <see cref="SaveToFolder(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -201,7 +201,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into given folder path with naming.
+        /// Save bitmap into given folder path with naming. Calls <see cref="SaveToFolder(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -214,7 +214,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into given folder path with naming.
+        /// Save bitmap into given folder path with naming. Calls <see cref="SaveToFolder(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -313,7 +313,7 @@ namespace EasySaver.BitmapFile
         #region Save to default path (Safe)
 
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism.
+        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false with exception.</returns>
@@ -323,7 +323,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism.
+        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -334,7 +334,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism.
+        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -346,7 +346,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism.
+        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -361,7 +361,7 @@ namespace EasySaver.BitmapFile
         #endregion Save to default path (Safe)
 
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism.
+        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -421,7 +421,7 @@ namespace EasySaver.BitmapFile
         #region Save to folder path (Safe)
 
         /// <summary>
-        /// Save bitmap into given folder path with try-catch mechanism.
+        /// Save bitmap into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false with exception.</returns>
@@ -431,7 +431,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into given folder path with try-catch mechanism.
+        /// Save bitmap into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
@@ -442,7 +442,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into given folder path with try-catch mechanism.
+        /// Save bitmap into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -454,7 +454,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into given folder path with try-catch mechanism.
+        /// Save bitmap into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -467,7 +467,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into given folder path with try-catch mechanism.
+        /// Save bitmap into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -481,7 +481,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into given folder path with try-catch mechanism.
+        /// Save bitmap into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>

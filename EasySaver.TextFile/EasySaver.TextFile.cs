@@ -64,7 +64,7 @@ namespace EasySaver.TextFile
         #region Save to default path
 
         /// <summary>
-        /// Save file with into path with naming.
+        /// Save file with into path with naming. Calls <see cref="Save(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <returns>True or false.</returns>
@@ -74,7 +74,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save file with into path with naming.
+        /// Save file with into path with naming. Calls <see cref="Save(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -85,7 +85,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save file with into path with naming.
+        /// Save file with into path with naming. Calls <see cref="Save(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -97,7 +97,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save file with into path with naming.
+        /// Save file with into path with naming. Calls <see cref="Save(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -171,7 +171,7 @@ namespace EasySaver.TextFile
         #region Save to folder path
 
         /// <summary>
-        /// Save text into given folder path with naming.
+        /// Save text into given folder path with naming. Calls <see cref="SaveToFolder(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         public static bool SaveToFolder(string text)
@@ -180,7 +180,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text into given folder path with naming.
+        /// Save text into given folder path with naming. Calls <see cref="SaveToFolder(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
@@ -190,7 +190,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text into given folder path with naming.
+        /// Save text into given folder path with naming. Calls <see cref="SaveToFolder(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -201,7 +201,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text into given folder path with naming.
+        /// Save text into given folder path with naming. Calls <see cref="SaveToFolder(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -213,7 +213,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text into given folder path with naming.
+        /// Save text into given folder path with naming. Calls <see cref="SaveToFolder(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -308,7 +308,7 @@ namespace EasySaver.TextFile
         #region Save to default path (Safe)
 
         /// <summary>
-        /// Save text file default folder with try-catch mechanism.
+        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <returns>True or false with exception.</returns>
@@ -318,7 +318,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text file default folder with try-catch mechanism.
+        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -329,7 +329,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text file default folder with try-catch mechanism.
+        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -341,7 +341,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text file default folder with try-catch mechanism.
+        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -415,7 +415,7 @@ namespace EasySaver.TextFile
         #region Save to folder path (Safe)
 
         /// <summary>
-        /// Save text into given folder path with try-catch mechanism.
+        /// Save text into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <returns>True or false with exception.</returns>
@@ -425,7 +425,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text into given folder path with try-catch mechanism.
+        /// Save text into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
@@ -436,7 +436,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text into given folder path with try-catch mechanism.
+        /// Save text into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -448,7 +448,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text into given folder path with try-catch mechanism.
+        /// Save text into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -461,7 +461,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text into given folder path with try-catch mechanism.
+        /// Save text into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>

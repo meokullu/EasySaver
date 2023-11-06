@@ -59,7 +59,7 @@ See changelog [EasySaver Changelog](https://github.com/meokullu/EasySaver/blob/m
 
 ### Authors & Contributing
 
-If you'd like to contribute, then contribute. <!-- [contributing guide](CONTRIBUTING.md). -->
+If you'd like to contribute, then contribute. [contributing guide](https://github.com/meokullu/EasySaver/blob/master/CONTRIBUTING.md).
 
 [![Contributors](https://contrib.rocks/image?repo=meokullu/EasySaver)](https://github.com/meokullu/EasySaver/graphs/contributors)
 
