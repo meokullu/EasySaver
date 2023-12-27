@@ -11,6 +11,15 @@
 #### Removed
 -->
 
+### [1.0.0-beta]
+
+#### Changed
+* Fixed misleading method links on summaries.
+* Renamed private variable.
+
+#### Removed
+* `Save(string text, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method was deprecated. Method is removed, you can use `SaveToFolder(string text, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
+* `SaveSafe(string text, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method was deprecated. Method is removed, you can use `SaveToFolderSafe(string text, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
 ### [1.0.0-alpha.6]
 
 #### Changed

@@ -53,7 +53,7 @@ namespace EasySaver.TextFile
         private readonly static NamingFormat _defaultNamingFormat = NamingFormat.DateTime;
 
         // Default value when using Save(string text, string fileName) and SaveToFolder(string text, string folderName, string fileName). Since there is only NamingFormat option available to use by design, this value is internally provided for shorter method usage.
-        private readonly static NamingFormat _OnlyTextProvidedNamingFormat = NamingFormat.Custom;
+        private readonly static NamingFormat _onlyTextProvidedNamingFormat = NamingFormat.Custom;
 
         private readonly static string _defaultFolderName = "Data";
         private readonly static bool _defaultOverwrite = false;
@@ -62,9 +62,8 @@ namespace EasySaver.TextFile
         #endregion Default Choices
 
         #region Save to default path
-
         /// <summary>
-        /// Save file with into path with naming. Calls <see cref="Save(string, string, string, NamingFormat, bool, bool)"/>
+        /// Save file with into path with naming. Calls <see cref="Save(string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <returns>True or false.</returns>
@@ -74,18 +73,18 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save file with into path with naming. Calls <see cref="Save(string, string, string, NamingFormat, bool, bool)"/>
+        /// Save file with into path with naming. Calls <see cref="Save(string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <returns>True or false.</returns>
         public static bool Save(string text, string fileName)
         {
-            return Save(text: text, fileName: fileName, _OnlyTextProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
+            return Save(text: text, fileName: fileName, _onlyTextProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
         }
 
         /// <summary>
-        /// Save file with into path with naming. Calls <see cref="Save(string, string, string, NamingFormat, bool, bool)"/>
+        /// Save file with into path with naming. Calls <see cref="Save(string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -97,7 +96,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save file with into path with naming. Calls <see cref="Save(string, string, string, NamingFormat, bool, bool)"/>
+        /// Save file with into path with naming. Calls <see cref="Save(string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -169,7 +168,6 @@ namespace EasySaver.TextFile
         #endregion Save to default path.
 
         #region Save to folder path
-
         /// <summary>
         /// Save text into given folder path with naming. Calls <see cref="SaveToFolder(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
@@ -290,25 +288,10 @@ namespace EasySaver.TextFile
 
         #endregion Save to folder path
 
-        /// <summary>
-        /// Save text into given folder path with naming.
-        /// </summary>
-        /// <param name="text">Text file to save.</param>
-        /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
-        /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
-        /// <param name="namingFormat">NamingFormat option to apply.</param>
-        /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
-        /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
-        [Obsolete(message: "This method is deprecated. Use SaveToFolder() instead.")]
-        public static bool Save(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
-        {
-            return SaveToFolder(text: text, folderName: folderName, fileName: fileName, namingFormat: namingFormat, overwrite: overwrite, renameIfExists: renameIfExists);
-        }
-
         #region Save to default path (Safe)
 
         /// <summary>
-        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, string, NamingFormat, bool, bool)"/>
+        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <returns>True or false with exception.</returns>
@@ -318,18 +301,18 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, string, NamingFormat, bool, bool)"/>
+        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <returns>True or false with exception.</returns>
         public static (bool, Exception?) SaveSafe(string text, string fileName)
         {
-            return SaveSafe(text: text, fileName: fileName, namingFormat: _OnlyTextProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
+            return SaveSafe(text: text, fileName: fileName, namingFormat: _onlyTextProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
         }
 
         /// <summary>
-        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, string, NamingFormat, bool, bool)"/>
+        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -341,7 +324,7 @@ namespace EasySaver.TextFile
         }
 
         /// <summary>
-        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, string, NamingFormat, bool, bool)"/>
+        /// Save text file default folder with try-catch mechanism. Calls <see cref="SaveSafe(string, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="text">Text to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -413,7 +396,6 @@ namespace EasySaver.TextFile
         #endregion Save to default path (Safe)
 
         #region Save to folder path (Safe)
-
         /// <summary>
         /// Save text into given folder path with try-catch mechanism. Calls <see cref="SaveToFolderSafe(string, string, string, NamingFormat, bool, bool)"/>
         /// </summary>
@@ -444,7 +426,7 @@ namespace EasySaver.TextFile
         /// <returns>True or false with exception.</returns>
         public static (bool, Exception?) SaveToFolderSafe(string text, string folderName, string fileName)
         {
-            return SaveToFolderSafe(text: text, folderName: folderName, fileName: fileName, namingFormat: _OnlyTextProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
+            return SaveToFolderSafe(text: text, folderName: folderName, fileName: fileName, namingFormat: _onlyTextProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
         }
 
         /// <summary>
@@ -539,22 +521,5 @@ namespace EasySaver.TextFile
         }
 
         #endregion Save to folder path (Safe)
-
-        /// <summary>
-        /// Save text into given folder path with try-catch mechanism.
-        /// </summary>
-        /// <param name="text">Text to save.</param>
-        /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
-        /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
-        /// <param name="namingFormat">NamingFormat option to apply.</param>
-        /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
-        /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
-        /// <returns>True or false with exception.</returns>
-        [Obsolete("This method is deprecated. Please use SaveToFolderSafe() instead.")]
-        public static (bool, Exception?) SaveSafe(string text, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
-        {
-            //
-            return SaveToFolderSafe(text: text, folderName: folderName, fileName: fileName, namingFormat: namingFormat, overwrite: overwrite, renameIfExists: renameIfExists);
-        }
     }
 }
