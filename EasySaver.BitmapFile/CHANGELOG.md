@@ -11,6 +11,16 @@
 #### Removed
 -->
 
+### [1.0.0-beta]
+
+#### Changed
+* Renaming private variable.
+* Fixed misleading method links on summaries.
+
+#### Removed
+* `Save(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method was deprecated. Method is removed, you can use `SaveToFolder(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
+* `SaveSafe(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method was deprecated. Method is removed, you can use `SaveToFolderSafe(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
+
 ### [1.0.0-alpha.7]
 
 #### Changed

@@ -50,7 +50,7 @@ namespace EasySaver.BitmapFile
         private readonly static NamingFormat _defaultNamingFormat = NamingFormat.DateTime;
 
         // Default value when using Save(Bitmap bitmap, string fileName) and SaveToFolder(Bitmap bitmap, string folderName, string fileName). Since there is only NamingFormat option available to use by design, this value is internally provided for shorter method usage.
-        private readonly static NamingFormat _OnlyBitmapProvidedNamingFormat = NamingFormat.Custom;
+        private readonly static NamingFormat _onlyBitmapProvidedNamingFormat = NamingFormat.Custom;
 
         private readonly static string _defaultFolderName = "Data";
         private readonly static bool _defaultOverwrite = false;
@@ -61,7 +61,7 @@ namespace EasySaver.BitmapFile
         #region Save to default path.
 
         /// <summary>
-        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, string, NamingFormat, bool, bool)"/>
+        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false.</returns>
@@ -71,18 +71,18 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, string, NamingFormat, bool, bool)"/>
+        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <returns>True or false.</returns>
         public static bool Save(Bitmap bitmap, string fileName)
         {
-            return Save(bitmap: bitmap, fileName: fileName, namingFormat: _OnlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
+            return Save(bitmap: bitmap, fileName: fileName, namingFormat: _onlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
         }
 
         /// <summary>
-        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, string, NamingFormat, bool, bool)"/>
+        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param> 
@@ -94,7 +94,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, string, NamingFormat, bool, bool)"/>
+        /// Save bitmap into path with naming. Calls <see cref="Save(Bitmap, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -115,7 +115,6 @@ namespace EasySaver.BitmapFile
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
         /// <returns>True or false.</returns>
-        [SupportedOSPlatform("windows")]
         public static bool Save(Bitmap bitmap, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
         {
             // Calls GetFileName() to decide fileName with adding extension at the end.
@@ -197,7 +196,7 @@ namespace EasySaver.BitmapFile
         /// <returns>True or false.</returns>
         public static bool SaveToFolder(Bitmap bitmap, string folderName, string fileName)
         {
-            return SaveToFolder(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: _OnlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
+            return SaveToFolder(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: _onlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
         }
 
         /// <summary>
@@ -293,48 +292,31 @@ namespace EasySaver.BitmapFile
 
         #endregion Save to folder path.
 
-        /// <summary>
-        /// Save bitmap into given folder path with naming.
-        /// </summary>
-        /// <param name="bitmap">Bitmap file to save.</param>
-        /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
-        /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
-        /// <param name="namingFormat">NamingFormat option to apply.</param>
-        /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
-        /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
-        /// <returns>True or false.</returns>
-        [SupportedOSPlatform("windows")]
-        [Obsolete("This method is deprecated. Use SaveToFolder() instead.")]
-        public static bool Save(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
-        {
-            return SaveToFolder(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: namingFormat, overwrite: overwrite, renameIfExists: renameIfExists);
-        }
-
         #region Save to default path (Safe)
 
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
+        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false with exception.</returns>
         public static (bool, Exception?) SaveSafe(Bitmap bitmap)
         {
-            return SaveSafe(bitmap: bitmap, fileName: _defaultFileName, namingFormat: _OnlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
+            return SaveSafe(bitmap: bitmap, fileName: _defaultFileName, namingFormat: _onlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
         }
 
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
+        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <returns>True or false with exception.</returns>
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName)
         {
-            return SaveSafe(bitmap: bitmap, fileName: fileName, namingFormat: _OnlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
+            return SaveSafe(bitmap: bitmap, fileName: fileName, namingFormat: _onlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
         }
 
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
+        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -346,7 +328,7 @@ namespace EasySaver.BitmapFile
         }
 
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
+        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, NamingFormat, bool, bool)"/>
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -358,10 +340,8 @@ namespace EasySaver.BitmapFile
             return SaveSafe(bitmap: bitmap, fileName: fileName, namingFormat: namingFormat, overwrite: overwrite, renameIfExists: _defaultRenameIfExists);
         }
 
-        #endregion Save to default path (Safe)
-
         /// <summary>
-        /// Save bitmap default folder with try-catch mechanism. Calls <see cref="SaveSafe(Bitmap, string, string, NamingFormat, bool, bool)"/>
+        /// Save bitmap default folder with try-catch mechanism.
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
@@ -369,7 +349,6 @@ namespace EasySaver.BitmapFile
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
         /// <returns>True or false with exception.</returns>
-        [SupportedOSPlatform("windows")]
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, NamingFormat namingFormat, bool overwrite = false, bool renameIfExists = true)
         {
             // Calls GetFileName() to decide fileName.
@@ -418,6 +397,8 @@ namespace EasySaver.BitmapFile
             }
         }
 
+        #endregion Save to default path (Safe)
+
         #region Save to folder path (Safe)
 
         /// <summary>
@@ -427,7 +408,7 @@ namespace EasySaver.BitmapFile
         /// <returns>True or false with exception.</returns>
         public static (bool, Exception?) SaveToFolderSafe(Bitmap bitmap)
         {
-            return SaveToFolderSafe(bitmap: bitmap, folderName: _defaultFolderName, fileName: _defaultFileName, namingFormat: _OnlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
+            return SaveToFolderSafe(bitmap: bitmap, folderName: _defaultFolderName, fileName: _defaultFileName, namingFormat: _onlyBitmapProvidedNamingFormat, overwrite: _defaultOverwrite, renameIfExists: _defaultRenameIfExists);
         }
 
         /// <summary>
@@ -545,22 +526,5 @@ namespace EasySaver.BitmapFile
         }
 
         #endregion Save to folder path (Safe)
-
-        /// <summary>
-        /// Save bitmap into given folder path with try-catch mechanism.
-        /// </summary>
-        /// <param name="bitmap">Bitmap file to save.</param>
-        /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
-        /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
-        /// <param name="namingFormat">NamingFormat option to apply.</param>
-        /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
-        /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
-        /// <returns>True or false with exception.</returns>
-        [SupportedOSPlatform("windows")]
-        [Obsolete("This method is depracted. Use SaveToFolderSafe() instead.")]
-        public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, string folderName = "Data", NamingFormat namingFormat = NamingFormat.DateTime, bool overwrite = false, bool renameIfExists = true)
-        {
-            return SaveToFolderSafe(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: namingFormat, overwrite: overwrite, renameIfExists: renameIfExists);
-        }
     }
 }
