@@ -12,14 +12,15 @@
     <FileVersion>1.0.0</FileVersion>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Version>1.0.0-alpha.6</Version>
+    <Version>1.0.0-beta</Version>
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>File; Saving; Save;</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0-alpha.6
-      * New design README.
-      * New design CHANGELOG.
+      v1.0.0-beta
+      * `GetAvailableFileName()` renamed as `GetRandomFileName()`.
+      * `NamingFormat.RandomName` is available now for beta tests.
+      * `NamingFormat.RandomName` and random naming has its own class as `RandomNaming.cs` under src folder.
       See changelog (https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -59,10 +60,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\DefaultRandomFileNameList.txt">
+    <None Include="Data\DefaultRandomFileNameList.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Data\RandomFileNameList.txt">
+    <None Include="Data\RandomFileNameList.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\common128.png">

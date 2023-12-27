@@ -1,5 +1,5 @@
 ## EasySaver Changelog
-[![CalculateETA](https://img.shields.io/nuget/v/EasySaver.Common.svg)](https://www.nuget.org/packages/EasySaver.Common/) [![EasySaver.Common](https://img.shields.io/nuget/dt/EasySaver.Common.svg)](https://www.nuget.org/packages/EasySaver.Common/) [![License](https://img.shields.io/github/license/meokullu/EasySaver.svg)](https://github.com/meokullu/EasySaver/blob/master/LICENSE)
+[![EasySaver.Common](https://img.shields.io/nuget/v/EasySaver.Common.svg)](https://www.nuget.org/packages/EasySaver.Common/) [![EasySaver.Common](https://img.shields.io/nuget/dt/EasySaver.Common.svg)](https://www.nuget.org/packages/EasySaver.Common/) [![License](https://img.shields.io/github/license/meokullu/EasySaver.svg)](https://github.com/meokullu/EasySaver/blob/master/LICENSE)
 
 <!--
 ### [Unreleased]
@@ -10,6 +10,15 @@
 
 #### Removed
 -->
+
+### [1.0.0-beta]
+#### Added
+* Random names into `RandomFileNameList.txt` as data source.
+
+#### Changed
+* `GetAvailableFileName()` renamed as `GetRandomFileName()`.
+* `NamingFormat.RandomName` is available now for beta tests.
+* `NamingFormat.RandomName` and random naming has its own class as `RandomNaming.cs` under src folder.
 
 ### [1.0.0-alpha.6]
 

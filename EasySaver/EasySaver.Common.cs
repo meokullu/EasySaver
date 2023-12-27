@@ -5,38 +5,48 @@ using System.Text;
 
 [assembly: InternalsVisibleTo("EasySaver.TextFile")]
 [assembly: InternalsVisibleTo("EasySaver.BitmapFile")]
+#if DEBUG
+[assembly: InternalsVisibleTo("EasySaverTest")]
+#endif
 namespace EasySaver.Common
 {
     /// <summary>
     /// Easy Saver Common
     /// </summary>
-    public class EasySaver
+    public partial class EasySaver
     {
-        /// <summary>
-        /// Variable indicates maximum attemt of renaming file name with new one if previous one does exist.
-        /// </summary>
-        internal static readonly byte _maxAttemptForRename = byte.MaxValue;
-
-        /// <summary>
-        /// In case of reaching maximum attempt, this method create a message to indicate which method reached.
-        /// </summary>
-        internal static string MaxAttemptMessage(string methodName) => $"{methodName} reached maximum attempt ({_maxAttemptForRename}) of renaming file that is about to save.";
-
         // Default text file extension.
         internal static string _defaultTextExtension = ".txt";
 
         // Default image file extension.
         internal static string _defaultImageExtension = ".bmp";
 
-        #region File paths
-
-        // Path for pre-populated random file name list.
-        private static readonly string defaultFileNamePath = @".\Data\DefaultRandomFileNameList.txt";
-
-        // Path for random file list.
-        private static readonly string randomFileNamePath = @".\Data\RandomFileNameList.txt";
-
-        #endregion File paths
+        /// <summary>
+        /// Naming formats
+        /// </summary>
+        public enum NamingFormat
+        {
+            /// <summary>
+            /// File name will consist only given text itself.
+            /// </summary>
+            Custom = 1,
+            /// <summary>
+            /// File name will consist time data.
+            /// </summary>
+            Time = 2,
+            /// <summary>
+            /// File name will consist date and time data.
+            /// </summary>
+            DateTime = 3,
+            /// <summary>
+            /// File name will consist date data.
+            /// </summary>
+            Date = 4,
+            /// <summary>
+            /// File name will consist random name that chosen from populated or prepopulated name list.
+            /// </summary>
+            RandomName = 5
+        }
 
         /// <summary>
         /// Get a file name based on naming format.
@@ -63,11 +73,11 @@ namespace EasySaver.Common
                 // The reason of this checking is because empty space is not allowed as file name.
                 return string.IsNullOrWhiteSpace(fileName) ? "file" : fileName;
             }
-            //else if (namingFormat == NamingFormat.RandomName)
-            //{
-            //    // If file name is null bring random name from list.
-            //    return GetAvailableFileName();
-            //}
+            else if (namingFormat == NamingFormat.RandomName)
+            {
+                // If file name is null bring random name from list.
+                return GetRandomFileName();
+            }
             else
             {
                 //
@@ -77,32 +87,7 @@ namespace EasySaver.Common
 
         #region Naming formats
 
-        /// <summary>
-        /// Naming formats
-        /// </summary>
-        public enum NamingFormat
-        {
-            /// <summary>
-            /// File name will consist only given text itself.
-            /// </summary>
-            Custom = 1,
-            /// <summary>
-            /// File name will consist time data.
-            /// </summary>
-            Time = 2,
-            /// <summary>
-            /// File name will consist date and time data.
-            /// </summary>
-            DateTime = 3,
-            /// <summary>
-            /// File name will consist date data.
-            /// </summary>
-            Date = 4,
-            //// <summary>
-            //// File name will consist random name that chosen from populated or prepopulated name list.
-            //// </summary>
-            //RandomName = 5
-        }
+       
 
         /// <summary>
         /// Variable that hold user choice to determine which option would be used for naming a file.
@@ -110,97 +95,6 @@ namespace EasySaver.Common
         public static NamingFormat SelectedNamingFormat { get; set; }
 
         #endregion Naming formats
-
-        #region File Name
-
-        /// <summary>
-        /// List of random file names.
-        /// </summary>
-        internal static string[]? randomFileNameList;
-
-        /// <summary>
-        /// Gets random name from list.
-        /// </summary>
-        /// <returns></returns>       
-        internal static string GetAvailableFileName()
-        {
-            // Checking if list is null or empty.
-            if (randomFileNameList == null || randomFileNameList.Length == 0)
-            {
-                // Fetching data into list.
-                FetchRandomFileNameList();
-            }
-
-            //
-            int availableNameOptions = randomFileNameList!.Length;
-
-            // TODO: -1 for length?
-            int indexOfAvailableName = new Random().Next(maxValue: availableNameOptions);
-
-            //
-            string availableFileName = randomFileNameList[indexOfAvailableName];
-
-            //
-            return availableFileName;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="Exception"></exception>
-        private static void FetchRandomFileNameList()
-        {
-            // Checking if randomfilename is null or empty.
-            if (randomFileNameList == null || randomFileNameList.Length == 0)
-            {
-                // Read lines from file and populate _RandomFileNameList variable.
-                randomFileNameList = File.ReadAllLines(randomFileNamePath, Encoding.UTF8);
-
-                // Checking if _RandomFileNameList is null or empty again to determine if list is empty or corrupted.
-                if (randomFileNameList == null || randomFileNameList.Length == 0)
-                {
-                    // Read lines from file and populate _RandomFileNameList variable.
-                    randomFileNameList = File.ReadAllLines(defaultFileNamePath, Encoding.UTF8);
-
-                    // Checking if _RandomFileNameList is still null or empty.
-                    if (randomFileNameList == null || randomFileNameList.Length == 0)
-                    {
-                        // Throwing exception to indicate file is missing or corrupted.
-                        throw new Exception($"File at {defaultFileNamePath} is missing or corrupted", new NullReferenceException());
-                    }
-                    else
-                    {
-                        // Fetching default random names into random names list.
-                        File.WriteAllLines(randomFileNamePath, randomFileNameList);
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="fileNameList"></param>
-        /// <returns></returns>
-        public static bool PopulateRandomFileNameList(string[] fileNameList)
-        {
-            //
-            try
-            {
-                // Write fileNameList into _randomFileNamePath
-                File.WriteAllLines(randomFileNamePath, fileNameList);
-
-                // Returning success to indicate writing was successful.
-                return true;
-            }
-            catch (Exception)
-            {
-                // Throwing an exception to indicate writing was failed.
-                throw;
-            }
-        }
-
-        #endregion File Name
 
         #region Get DateTime
 
@@ -210,7 +104,7 @@ namespace EasySaver.Common
         /// <returns></returns>
         private static DateTime GetDateTimeStamp()
         {
-            //
+            // Return now from System.DateTime.
             return DateTime.Now;
         }
 
