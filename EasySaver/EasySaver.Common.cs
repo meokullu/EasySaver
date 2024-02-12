@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.CompilerServices;
-using System.Text;
-
 [assembly: InternalsVisibleTo("EasySaver.TextFile")]
 [assembly: InternalsVisibleTo("EasySaver.BitmapFile")]
 #if DEBUG
@@ -16,10 +14,20 @@ namespace EasySaver.Common
     public partial class EasySaver
     {
         // Default text file extension.
-        internal static string _defaultTextExtension = ".txt";
+        internal static string s_defaultTextExtension = ".txt";
 
         // Default image file extension.
-        internal static string _defaultImageExtension = ".bmp";
+        internal static string s_defaultImageExtension = ".bmp";
+
+        /// <summary>
+        /// Variable indicates maximum attemt of renaming file name with new one if previous one does exist.
+        /// </summary>
+        internal static readonly byte s_maxAttemptForRename = byte.MaxValue;
+
+        /// <summary>
+        /// In case of reaching maximum attempt, this method create a message to indicate which method reached.
+        /// </summary>
+        internal static string MaxAttemptMessage(string methodName) => $"{methodName} reached maximum attempt ({s_maxAttemptForRename}) of renaming file that is about to save.";
 
         /// <summary>
         /// Naming formats
@@ -42,10 +50,10 @@ namespace EasySaver.Common
             /// File name will consist date data.
             /// </summary>
             Date = 4,
-            /// <summary>
-            /// File name will consist random name that chosen from populated or prepopulated name list.
-            /// </summary>
-            RandomName = 5
+            ///// <summary>
+            ///// File name will consist random name that chosen from populated or prepopulated name list.
+            ///// </summary>
+            //RandomName = 5
         }
 
         /// <summary>
@@ -73,22 +81,20 @@ namespace EasySaver.Common
                 // The reason of this checking is because empty space is not allowed as file name.
                 return string.IsNullOrWhiteSpace(fileName) ? "file" : fileName;
             }
-            else if (namingFormat == NamingFormat.RandomName)
-            {
-                // If file name is null bring random name from list.
-                return GetRandomFileName();
-            }
+            //else if (namingFormat == NamingFormat.RandomName)
+            //{
+            //    // If file name is null bring random name from list.
+            //    return GetRandomFileName();
+            //}
             else
             {
                 //
-                throw new Exception("NamingFormat is not correct");
+                throw new Exception("NamingFormat is not correct.");
             }
         }
 
         #region Naming formats
-
-       
-
+        
         /// <summary>
         /// Variable that hold user choice to determine which option would be used for naming a file.
         /// </summary>
