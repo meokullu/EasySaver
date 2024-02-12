@@ -21,22 +21,12 @@ namespace EasySaver.Common
 
         #region Random naming
 
-        /// <summary>
-        /// Variable indicates maximum attemt of renaming file name with new one if previous one does exist.
-        /// </summary>
-        internal static readonly byte _maxAttemptForRename = byte.MaxValue;
-
-        /// <summary>
-        /// In case of reaching maximum attempt, this method create a message to indicate which method reached.
-        /// </summary>
-        internal static string MaxAttemptMessage(string methodName) => $"{methodName} reached maximum attempt ({_maxAttemptForRename}) of renaming file that is about to save.";
-
         #region File Name
 
         /// <summary>
         /// List of random file names.
         /// </summary>
-        internal static string[]? randomFileNameList;
+        internal static string[] randomFileNameList;
 
         /// <summary>
         /// Gets random name from list.
@@ -52,7 +42,7 @@ namespace EasySaver.Common
             }
 
             //
-            int availableNameOptions = randomFileNameList!.Length;
+            int availableNameOptions = randomFileNameList.Length;
 
             //
 #if DEBUG

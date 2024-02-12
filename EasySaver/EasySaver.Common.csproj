@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Easy Saver</Title>
@@ -12,15 +11,18 @@
     <FileVersion>1.0.0</FileVersion>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Version>1.0.0-beta</Version>
+    <Version>1.0.0</Version>
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>File; Saving; Save;</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0-beta
-      * `GetAvailableFileName()` renamed as `GetRandomFileName()`.
-      * `NamingFormat.RandomName` is available now for beta tests.
-      * `NamingFormat.RandomName` and random naming has its own class as `RandomNaming.cs` under src folder.
+      v1.0.0
+      * Internal variable `s_maxAttemptForRename` is moved from RandomNaming.cs to EasySaver.Common.cs
+      * `MaxAttemptMessage(string methodName)` is moved from RandomNaming.cs to EasySaver.Common.cs
+      * Naming inconventions are fixed.
+      * RandomNaming.cs is removed.
+      * `RandomName` is removed as an option from `NamingFormat` enum.
+      * `RandomName` is removed as an condition from `GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.DateTime)`
       See changelog (https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -39,6 +41,15 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <WarningLevel>9999</WarningLevel>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="src\RandomNaming.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Data\DefaultRandomFileNameList.txt" />
+    <None Remove="Data\RandomFileNameList.txt" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\common256.ico" />
@@ -60,16 +71,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Data\DefaultRandomFileNameList.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\RandomFileNameList.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\common128.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="src\" />
   </ItemGroup>
 
 </Project>

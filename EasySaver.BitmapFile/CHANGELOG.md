@@ -11,6 +11,11 @@
 #### Removed
 -->
 
+### [1.0.0]
+
+#### Changed
+* Naming inconventions is fixed on internal variables.
+
 ### [1.0.0-beta]
 
 #### Changed

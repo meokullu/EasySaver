@@ -11,6 +11,18 @@
 #### Removed
 -->
 
+### [1.0.0]
+
+#### Changed
+* Internal variable `s_maxAttemptForRename` is moved from RandomNaming.cs to EasySaver.Common.cs
+* `MaxAttemptMessage(string methodName)` is moved from RandomNaming.cs to EasySaver.Common.cs
+* Naming inconventions are fixed.
+
+#### Removed
+* RandomNaming.cs is removed.
+* `RandomName` is removed as an option from `NamingFormat` enum.
+* `RandomName` is removed as an condition from `GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.DateTime)`
+
 ### [1.0.0-beta]
 #### Added
 * Random names into `RandomFileNameList.txt` as data source.

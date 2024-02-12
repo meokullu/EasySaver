@@ -9,10 +9,10 @@
     <Title>Easy Saver Text File</Title>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
-    <Version>1.0.0-beta</Version>
+    <Version>1.0.0</Version>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Description>Easy Saver Text project is dependent on Easy Saver. It offers methods to save text files easily.</Description>
+    <Description>EasySaver.TextFile package is dependent on Easy Saver. It offers methods to save text files easily.</Description>
     <Copyright>Enes Okullu</Copyright>
     <PackageProjectUrl>meokullu.github.io/EasySaver/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -20,11 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>text; text-saving; file; file-saving</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0-beta
-      * `Save(string text, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method was deprecated. Method is removed, you can use `SaveToFolder(string text, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
-      * `SaveSafe(string text, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method was deprecated. Method is removed, you can use `SaveToFolderSafe(string text, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
-      * Renamed private variable.
-      * Fixed misleading method links on summaries.
+      v1.0.0
+      * Naming inconventions are fixed on internal variables.
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.TextFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
