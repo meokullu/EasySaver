@@ -1,7 +1,9 @@
 ## EasySaver BitmapFile
 [![EasySaver.BitmapFile](https://img.shields.io/nuget/v/EasySaver.BitmapFile.svg)](https://www.nuget.org/packages/EasySaver.BitmapFile/) [![EasySaver.BitmapFile](https://img.shields.io/nuget/dt/EasySaver.BitmapFile.svg)](https://www.nuget.org/packages/EasySaver.BitmapFile/) [![License](https://img.shields.io/github/license/meokullu/EasySaver.svg)](https://github.com/meokullu/EasySaver/blob/master/LICENSE)
 
-EasySaver is a package to save bitmap files easily with different naming formats including custom, time, date and datetime..
+EasySaver.BitmapFile is a package to save bitmap files easily with different naming formats including custom, time, date and datetime..
+
+![EasySaver.BitmapFile](https://github.com/meokullu/EasySaver/assets/4971757/0f004856-d168-43b4-b3e8-32e46b60a128)
 
 [Download on NuGet gallery](https://www.nuget.org/packages/EasySaver.BitmapFile/)
 
