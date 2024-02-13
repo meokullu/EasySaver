@@ -3,6 +3,8 @@
 
 EasySaver.TextFile is a package to save text files easily with different naming formats including custom, time, date and datetime.
 
+![EasySaver.TextFile](https://github.com/meokullu/EasySaver/assets/4971757/297238c5-7516-4cb0-89ad-969a0f184ba8)
+
 [Download on NuGet gallery](https://www.nuget.org/packages/EasySaver.TextFile/)
 
 ### Description
