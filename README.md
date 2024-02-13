@@ -1,7 +1,8 @@
 ## EasySaver
 [![EasySaver](https://img.shields.io/nuget/v/EasySaver.Common.svg)](https://www.nuget.org/packages/EasySaver.Common/) [![EasySaver.Common](https://img.shields.io/nuget/dt/EasySaver.Common.svg)](https://www.nuget.org/packages/EasySaver.Common/) [![License](https://img.shields.io/github/license/meokullu/EasySaver.svg)](https://github.com/meokullu/EasySaver/blob/master/LICENSE)
 
-EasySaver is a multi-solution package to save bitmap image files and text files easily with different naming formats custom, date, time or datetime.
+EasySaver is a multi-solution package to save bitmap image files and text files easily with different naming formats including custom, date, time or datetime.
+![EasySaver](https://github.com/meokullu/EasySaver/assets/4971757/ce22fd18-52e8-4092-ae04-30a169ea60c0)
 
 [Download on NuGet gallery](https://www.nuget.org/packages/EasySaver/)
 
@@ -41,10 +42,10 @@ NamingFormat.DateTime
 To check listed/unlisted methods, example of output visit wiki page. [EasySaver Wiki](https://github.com/meokullu/EasySaver/wiki)
 
 ### BitmapFile
-[README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.BitmapFile/README.md#listed-methods)
+[BitmapFile README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.BitmapFile/README.md#listed-methods)
 
 ### TextFile
-[README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.TextFile/README.md#listed-methods)
+[TextFile README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.TextFile/README.md#listed-methods)
 
 ### Version History
 See changelog [EasySaver Changelog](https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
