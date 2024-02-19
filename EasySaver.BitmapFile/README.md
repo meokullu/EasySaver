@@ -1,7 +1,7 @@
 ## EasySaver BitmapFile
 [![EasySaver.BitmapFile](https://img.shields.io/nuget/v/EasySaver.BitmapFile.svg)](https://www.nuget.org/packages/EasySaver.BitmapFile/) [![EasySaver.BitmapFile](https://img.shields.io/nuget/dt/EasySaver.BitmapFile.svg)](https://www.nuget.org/packages/EasySaver.BitmapFile/) [![License](https://img.shields.io/github/license/meokullu/EasySaver.svg)](https://github.com/meokullu/EasySaver/blob/master/LICENSE)
 
-EasySaver.BitmapFile is a package to save bitmap files easily with different naming formats including custom, time, date and datetime..
+EasySaver.BitmapFile is a package to save bitmap files easily with different naming formats including custom, time, date and datetime.
 
 ![EasySaver.BitmapFile](https://github.com/meokullu/EasySaver/assets/4971757/0f004856-d168-43b4-b3e8-32e46b60a128)
 
@@ -13,16 +13,16 @@ This is README file for EasySaver.BitmapFile.
 
 ### Listed Methods
 ```
-Save(Bitmap bitmap)
+Save(Bitmap bitmap);
 ```
 ```
-Save(Bitmap bitmap, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
+Save(Bitmap bitmap, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists);
 ```
 ```
-SaveToFolder(Bitmap bitmap)
+SaveToFolder(Bitmap bitmap);
 ```
 ```
-SaveToFolder(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
+SaveToFolder(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists);
 ```
 
 To check listed/unlisted methods, example of output visit wiki page. [EasySaver Wiki](https://github.com/meokullu/EasySaver/wiki)
