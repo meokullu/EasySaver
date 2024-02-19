@@ -13,16 +13,16 @@ This is README file for EasySaver.TextFile.
 
 ### Example Usage
 ```
-Save(string text)
+Save(string text);
 ```
 ```
 Save(string text, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
 ```
 ```
-SaveToFolder(string text)
+SaveToFolder(string text);
 ```
 ```
-SaveToFolder(string text, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
+SaveToFolder(string text, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists);
 ```
 
 To check listed/unlisted methods, example of output visit wiki page. [EasySaver Wiki](https://github.com/meokullu/EasySaver/wiki)
