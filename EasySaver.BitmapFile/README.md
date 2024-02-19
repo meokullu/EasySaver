@@ -11,7 +11,7 @@ EasySaver.BitmapFile is a package to save bitmap files easily with different nam
 
 This is README file for EasySaver.BitmapFile.
 
-### Listed Methods
+### Example Usage
 ```
 Save(Bitmap bitmap);
 ```
