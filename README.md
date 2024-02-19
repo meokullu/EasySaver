@@ -42,10 +42,10 @@ NamingFormat.DateTime
 To check listed/unlisted methods, example of output visit wiki page. [EasySaver Wiki](https://github.com/meokullu/EasySaver/wiki)
 
 ### BitmapFile
-[BitmapFile README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.BitmapFile/README.md#listed-methods)
+[BitmapFile README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.BitmapFile/README.md)
 
 ### TextFile
-[TextFile README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.TextFile/README.md#listed-methods)
+[TextFile README](https://github.com/meokullu/EasySaver/tree/master/EasySaver.TextFile/README.md)
 
 ### Version History
 See changelog [EasySaver Changelog](https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
