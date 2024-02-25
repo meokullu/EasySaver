@@ -65,14 +65,29 @@ namespace EasySaver.Common
             LongTime = 20,
 
             /// <summary>
+            /// File name will consist short time data.
+            /// </summary>
+            ShortTime = 21,
+
+            /// <summary>
             /// File name will consist date and time data.
             /// </summary>
             LongDateTime = 40,
 
             /// <summary>
+            /// File name will consist short date and time data.
+            /// </summary>
+            ShortDateTime = 41,
+
+            /// <summary>
             /// File name will consist date data.
             /// </summary>
-            LongDate = 60
+            LongDate = 60,
+
+            /// <summary>
+            /// File name will consist short date data.
+            /// </summary>
+            ShortDate = 61
         }
 
         /// <summary>
@@ -88,7 +103,7 @@ namespace EasySaver.Common
             // If extension would be added here, it would look like as file.txt(1).
 
             //TODO: Remove .DateTime, .Date and .Time when new version is introduced after making them obsolete.
-            // Checking if naming format is DateTime, Date or Time so GetFormattedDateTimeStamp() returns available file name.
+            // Checking if naming format is LongDateTime, LongDate, LongTime so GetFormattedDateTimeStamp() returns available file name.
 #pragma warning disable CS0618 // Type or member is obsolete
             if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.Date || namingFormat == NamingFormat.Time || namingFormat == NamingFormat.LongDateTime || namingFormat ==  NamingFormat.LongDate || namingFormat == NamingFormat.LongTime)
             {
@@ -189,15 +204,30 @@ namespace EasySaver.Common
                 //
                 return $"{hour}-{minute}-{second}-{millisecond}";
             }
+            else if (namingFormat == NamingFormat.ShortTime)
+            {
+                //
+                return $"{hour}-{minute}-{second}";
+            }
             else if (namingFormat == NamingFormat.Date || namingFormat == NamingFormat.LongDate)
             {
                 //
                 return $"{year}-{month}-{day}";
             }
+            else if (namingFormat == NamingFormat.ShortDate)
+            {
+                //
+                return $"{month}-{day}";
+            }
             else if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.LongDateTime)
             {
                 //
                 return $"{year}-{month}-{day}-{hour}-{minute}-{second}-{millisecond}";
+            }
+            else if (namingFormat == NamingFormat.ShortDateTime)
+            {
+                //
+                return $"{month}-{day}-{hour}-{minute}-{second}";
             }
             else
             {
