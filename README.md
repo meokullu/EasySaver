@@ -1,7 +1,7 @@
 ## EasySaver
 [![EasySaver](https://img.shields.io/nuget/v/EasySaver.Common.svg)](https://www.nuget.org/packages/EasySaver.Common/) [![EasySaver.Common](https://img.shields.io/nuget/dt/EasySaver.Common.svg)](https://www.nuget.org/packages/EasySaver.Common/) [![License](https://img.shields.io/github/license/meokullu/EasySaver.svg)](https://github.com/meokullu/EasySaver/blob/master/LICENSE)
 
-EasySaver is a multi-solution package to save bitmap image files and text files easily with different naming formats including custom, date, time or datetime.
+EasySaver is a multi-solution package to save bitmap image files and text files easily with different naming formats including `Custom`, `LongDate`, `LongTime` or `LongDateTime`.
 ![EasySaverSocialPreview2302](https://github.com/meokullu/EasySaver/assets/4971757/5fc47c37-ca55-44bf-9035-dcc858034177)
 
 [Download on NuGet gallery](https://www.nuget.org/packages/EasySaver/)
@@ -24,15 +24,15 @@ NamingFormat.Custom
 ```
 
 ```
-NamingFormat.Time
+NamingFormat.LongTime
 ```
 
 ```
-NamingFormat.Date
+NamingFormat.LongDate
 ```
 
 ```
-NamingFormat.DateTime
+NamingFormat.LongDateTime
 ```
 
 To check listed/unlisted methods, example of output visit wiki page. [EasySaver Wiki](https://github.com/meokullu/EasySaver/wiki)

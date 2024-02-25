@@ -1,7 +1,7 @@
 ## EasySaver TextFile
 [![EasySaver.TextFile](https://img.shields.io/nuget/v/EasySaver.TextFile.svg)](https://www.nuget.org/packages/EasySaver.TextFile/) [![EasySaver.TextFile](https://img.shields.io/nuget/dt/EasySaver.TextFile.svg)](https://www.nuget.org/packages/EasySaver.TextFile/) [![License](https://img.shields.io/github/license/meokullu/EasySaver.svg)](https://github.com/meokullu/EasySaver/blob/master/LICENSE)
 
-EasySaver.TextFile is a package to save text files easily with different naming formats including `custom`, `time`, `date` and `datetime`.
+EasySaver.TextFile is a package to save text files easily with different naming formats including `Custom`, `LongTime`, `LongDate` and `LongDateTime`.
 
 ![EasySaverSocialPreview2302](https://github.com/meokullu/EasySaver/assets/4971757/ce69acb4-7604-4736-9628-d3697392a55f)
 

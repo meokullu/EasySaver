@@ -50,7 +50,7 @@ namespace EasySaver.TextFile
         private readonly static string s_defaultFileName = "";
 
         // Default value if NamingFormat is not provided.
-        private readonly static NamingFormat s_defaultNamingFormat = NamingFormat.DateTime;
+        private readonly static NamingFormat s_defaultNamingFormat = NamingFormat.LongDateTime;
 
         // Default value when using Save(string text, string fileName) and SaveToFolder(string text, string folderName, string fileName). Since there is only NamingFormat option available to use by design, this value is internally provided for shorter method usage.
         private readonly static NamingFormat s_onlyTextProvidedNamingFormat = NamingFormat.Custom;

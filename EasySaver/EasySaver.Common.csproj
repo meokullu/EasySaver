@@ -7,22 +7,17 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Easy Saver</Title>
     <Copyright>Enes Okullu</Copyright>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
+    <FileVersion>1.1.0</FileVersion>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>File; Saving; Save;</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0
-      * Internal variable `s_maxAttemptForRename` is moved from RandomNaming.cs to EasySaver.Common.cs
-      * `MaxAttemptMessage(string methodName)` is moved from RandomNaming.cs to EasySaver.Common.cs
-      * Naming inconventions are fixed.
-      * RandomNaming.cs is removed.
-      * `RandomName` is removed as an option from `NamingFormat` enum.
-      * `RandomName` is removed as an condition from `GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.DateTime)`
+      v1.1.0
+      
       See changelog (https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
