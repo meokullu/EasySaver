@@ -13,7 +13,7 @@
 
 ### [1.1.0]
 #### Added
-* `NamingFormat.LongTime`, `NamingFormat.LongDateTime`, `NamingFormat.LongDate` ... are added.
+* `NamingFormat.LongTime`, `NamingFormat.LongDateTime`, `NamingFormat.LongDate`, `NamingFormat.ShortTime`, `NamingFormat.ShortDateTime` and `NamingFormat.ShortDate`are added.
 
 #### Changed
 * `NamingFormat.Time`, `NamingFormat.DateTime` and `NamingFormat.Date` are obsolete now. You can use .LongTime, .LongDateTime and .LongDateTime respectively.
