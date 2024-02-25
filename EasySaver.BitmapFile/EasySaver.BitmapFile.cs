@@ -477,14 +477,14 @@ namespace EasySaver.BitmapFile
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
             // Checking if folder exists.
-            if (CheckIfFolderExist($"./{folderName}") == false)
+            if (CheckIfFolderExist(folderName) == false)
             {
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
                 _ = System.IO.Directory.CreateDirectory($"{folderName}\\");
             }
 
             // Checking if file exist via CheckIfFileExist().
-            bool fileExists = CheckIfFileExist($"{folderName}/{fileName}");
+            bool fileExists = CheckIfFileExist($"{folderName}/{fileName}{s_defaultImageExtension}");
 
             // Checking if file doesn't exist.
             if (fileExists == false)
