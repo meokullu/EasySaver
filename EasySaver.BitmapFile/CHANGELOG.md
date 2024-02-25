@@ -11,6 +11,11 @@
 #### Removed
 -->
 
+### [1.1.0]
+#### Fixed
+* CheckFolderIfExists() had parameter value bug in SaveToFolderSafe(). This bug is fixed. (#51)[https://github.com/meokullu/EasySaver/issues/51]
+* CheckFileIfExists() had parameter value bug in SaveToFolderSave(). This bug is fixed. (#51)[https://github.com/meokullu/EasySaver/issues/51]
+
 ### [1.0.0]
 
 #### Changed
