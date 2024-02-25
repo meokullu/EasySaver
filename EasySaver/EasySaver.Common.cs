@@ -105,7 +105,16 @@ namespace EasySaver.Common
             //TODO: Remove .DateTime, .Date and .Time when new version is introduced after making them obsolete.
             // Checking if naming format is LongDateTime, LongDate, LongTime so GetFormattedDateTimeStamp() returns available file name.
 #pragma warning disable CS0618 // Type or member is obsolete
-            if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.Date || namingFormat == NamingFormat.Time || namingFormat == NamingFormat.LongDateTime || namingFormat ==  NamingFormat.LongDate || namingFormat == NamingFormat.LongTime)
+            if (
+                namingFormat == NamingFormat.DateTime || 
+                namingFormat == NamingFormat.Date || 
+                namingFormat == NamingFormat.Time || 
+                namingFormat == NamingFormat.LongDateTime || 
+                namingFormat ==  NamingFormat.LongDate || 
+                namingFormat == NamingFormat.LongTime || 
+                namingFormat == NamingFormat.ShortDateTime || 
+                namingFormat == NamingFormat.ShortDate || 
+                namingFormat == NamingFormat.ShortTime)
             {
                 // Calls GetFormattedDateTimeStamp().
                 return GetFormattedDateTimeStamp(namingFormat: namingFormat);
