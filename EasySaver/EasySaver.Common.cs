@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("EasySaver.TextFile")]
 [assembly: InternalsVisibleTo("EasySaver.BitmapFile")]
@@ -41,19 +42,37 @@ namespace EasySaver.Common
             /// <summary>
             /// File name will consist time data.
             /// </summary>
+            [Obsolete("Use LongTime")]
             Time = 2,
             /// <summary>
             /// File name will consist date and time data.
             /// </summary>
+            [Obsolete("Use LongDateTime")]
             DateTime = 3,
             /// <summary>
             /// File name will consist date data.
             /// </summary>
+            [Obsolete("Use LongDate")]
             Date = 4,
             ///// <summary>
             ///// File name will consist random name that chosen from populated or prepopulated name list.
             ///// </summary>
             //RandomName = 5
+
+            /// <summary>
+            /// File name will consist time data.
+            /// </summary>
+            LongTime = 20,
+
+            /// <summary>
+            /// File name will consist date and time data.
+            /// </summary>
+            LongDateTime = 40,
+
+            /// <summary>
+            /// File name will consist date data.
+            /// </summary>
+            LongDate = 60
         }
 
         /// <summary>
@@ -62,14 +81,16 @@ namespace EasySaver.Common
         /// <param name="fileName"></param>
         /// <param name="namingFormat"></param>
         /// <returns></returns>
-        /// <exception cref="Exception">Throws if given namingFormat is not defined in NamingFormat enum llist.</exception>
-        internal static string GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.DateTime)
+        /// <exception cref="Exception">Throws if given namingFormat is not defined in NamingFormat enum list.</exception>
+        internal static string GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.LongDateTime)
         {
             // The reason that extension is not added here, because of in case of repeatence filename might has a name like file(1).
             // If extension would be added here, it would look like as file.txt(1).
 
+            //TODO: Remove .DateTime, .Date and .Time when new version is introduced after making them obsolete.
             // Checking if naming format is DateTime, Date or Time so GetFormattedDateTimeStamp() returns available file name.
-            if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.Date || namingFormat == NamingFormat.Time)
+#pragma warning disable CS0618 // Type or member is obsolete
+            if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.Date || namingFormat == NamingFormat.Time || namingFormat == NamingFormat.LongDateTime || namingFormat ==  NamingFormat.LongDate || namingFormat == NamingFormat.LongTime)
             {
                 // Calls GetFormattedDateTimeStamp().
                 return GetFormattedDateTimeStamp(namingFormat: namingFormat);
@@ -91,6 +112,7 @@ namespace EasySaver.Common
                 //
                 throw new Exception("NamingFormat is not correct.");
             }
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         #region Naming formats
@@ -115,16 +137,28 @@ namespace EasySaver.Common
         }
 
         /// <summary>
-        /// 
+        /// {year}-{month}-{day}
         /// </summary>
         /// <returns></returns>
+        [Obsolete("Use LongDayString")]
         public static string TodayString => GetFormattedDateTimeStamp(NamingFormat.Date);
 
         /// <summary>
-        /// 
+        /// Returns {hour}-{minute}-{second}-{millisecond} as string.
         /// </summary>
         /// <returns></returns>
+        [Obsolete("Use LongTimeString")]
         public static string NowString => GetFormattedDateTimeStamp(NamingFormat.Time);
+
+        /// <summary>
+        /// Return {year}-{month}-{day} as string.
+        /// </summary>
+        public static string LongDayString => GetFormattedDateTimeStamp(NamingFormat.LongDate);
+
+        /// <summary>
+        /// Returns {hour}-{minute}-{second}-{millisecond} as string.
+        /// </summary>
+        public static string LongTimeString => GetFormattedDateTimeStamp(NamingFormat.LongTime);
 
         /// <summary>
         /// Get formatted datetime span by pre-chosen option.
@@ -147,18 +181,20 @@ namespace EasySaver.Common
             string second = dateTime.ToString("ss");
             string millisecond = dateTime.ToString("fff");
 
+            //TODO: Remove .DateTime, .Date and .Time when new version is introduced after making them obsolete.
             //
-            if (namingFormat == NamingFormat.Time)
+#pragma warning disable CS0618 // Type or member is obsolete
+            if (namingFormat == NamingFormat.Time || namingFormat == NamingFormat.LongTime)
             {
                 //
                 return $"{hour}-{minute}-{second}-{millisecond}";
             }
-            else if (namingFormat == NamingFormat.Date)
+            else if (namingFormat == NamingFormat.Date || namingFormat == NamingFormat.LongDate)
             {
                 //
                 return $"{year}-{month}-{day}";
             }
-            else if (namingFormat == NamingFormat.DateTime)
+            else if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.LongDateTime)
             {
                 //
                 return $"{year}-{month}-{day}-{hour}-{minute}-{second}-{millisecond}";
@@ -168,6 +204,7 @@ namespace EasySaver.Common
                 //
                 throw new NotImplementedException();
             }
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         #endregion Get DateTime

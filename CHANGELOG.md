@@ -11,6 +11,14 @@
 #### Removed
 -->
 
+### [1.1.0]
+#### Added
+* `NamingFormat.LongTime`, `NamingFormat.LongDateTime`, `NamingFormat.LongDate` ... are added.
+
+#### Changed
+* `NamingFormat.Time`, `NamingFormat.DateTime` and `NamingFormat.Date` are obsolete now. You can use .LongTime, .LongDateTime and .LongDateTime respectively.
+* `TodayString` and `NowString` are obsolete now. You can use `LongDayString` and `LongTimeString` respectively.
+
 ### [1.0.0]
 
 #### Changed
