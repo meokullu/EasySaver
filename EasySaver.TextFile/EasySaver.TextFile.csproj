@@ -7,9 +7,9 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Title>Easy Saver Text File</Title>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
-    <Version>1.0.0</Version>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
+    <FileVersion>1.1.0</FileVersion>
+    <Version>1.1.0</Version>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
     <Description>EasySaver.TextFile package is dependent on Easy Saver. It offers methods to save text files easily.</Description>
@@ -20,8 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>text; text-saving; file; file-saving</PackageTags>
     <PackageReleaseNotes>
-      v1.0.0
-      * Naming inconventions are fixed on internal variables.
+      v1.1.0
+      * CheckFolderIfExists() had parameter value bug in SaveToFolderSafe(). This bug is fixed. (#52)[https://github.com/meokullu/EasySaver/issues/52]
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.TextFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
@@ -41,7 +41,6 @@
   <ItemGroup>
     <Content Include="Resources\icon.ico" />
   </ItemGroup>
-
   
   <ItemGroup>
     <ProjectReference Include="..\EasySaver\EasySaver.Common.csproj" />
