@@ -3,7 +3,7 @@
 
 EasySaver.BitmapFile is a package to save bitmap files easily with different naming formats including `Custom`, `LongDate`, `ShortDate`, `LongTime`, `ShortTime`, `LongDateTime` and `ShortDateTime`
 
-![EasySaverSocialPreview2302](https://github.com/meokullu/EasySaver/assets/4971757/dca9b6bd-a572-4bd9-821d-87236f126e7a)
+![EasySaver.BitmapFile](https://github.com/meokullu/EasySaver/assets/4971757/830f74f1-eab8-44eb-9211-ed61c11074df)
 
 [Download on NuGet gallery](https://www.nuget.org/packages/EasySaver.BitmapFile/)
 
