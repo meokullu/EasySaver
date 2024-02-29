@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using System.Runtime.Versioning;
 using static EasySaver.Common.EasySaver;
 
 namespace EasySaver.TextFile
@@ -9,7 +8,6 @@ namespace EasySaver.TextFile
     /// <summary>
     /// EasySaver TextFile
     /// </summary>
-    [SupportedOSPlatform("windows")]
     public class EasySaverTextFile
     {
         #region Write
@@ -18,7 +16,7 @@ namespace EasySaver.TextFile
         private static void WriteViaStreamWriter(string path, string text)
         {
             // Using StreamWriter to use Write().
-            using StreamWriter writer = new(path);
+            using StreamWriter writer = new StreamWriter(path);
 
             // Saving text with specified path.
             writer.Write(text);
@@ -236,6 +234,9 @@ namespace EasySaver.TextFile
         {
             // Calls GetFileName() to decide fileName.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
+
+            // Checking if folderName is null or empty. If it is, it gets default folder name.
+            folderName = string.IsNullOrEmpty(folderName) ? s_defaultFolderName : folderName;
 
             // Checking if folder exists.
             if (CheckIfFolderExist(folderName) == false)
@@ -470,6 +471,9 @@ namespace EasySaver.TextFile
         {
             // Calls GetFileName() to decide fileName.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
+
+            // Checking if folderName is null or empty. If it is, it gets default folder name.
+            folderName = string.IsNullOrEmpty(folderName) ? s_defaultFolderName : folderName;
 
             // Checking if folder exists.
             if (CheckIfFolderExist(folderName) == false)

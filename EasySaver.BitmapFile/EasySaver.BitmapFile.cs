@@ -279,6 +279,9 @@ namespace EasySaver.BitmapFile
             // Calls GetFileName() to decide fileName.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
 
+            // Checking if folderName is null or empty. If it is, it gets default folder name.
+            folderName = string.IsNullOrEmpty(folderName) ? s_defaultFolderName : folderName;
+
             // Checking if folder exists.
             if (CheckIfFolderExist(folderName) == false)
             {
@@ -546,6 +549,9 @@ namespace EasySaver.BitmapFile
         {
             // Calls GetFileName() to decide fileName.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
+
+            // Checking if folderName is null or empty. If it is, it gets default folder name.
+            folderName = string.IsNullOrEmpty(folderName) ? s_defaultFolderName : folderName;
 
             // Checking if folder exists.
             if (CheckIfFolderExist(folderName) == false)
