@@ -9,12 +9,14 @@ namespace EasySaver.BitmapFile
     /// <summary>
     /// EasySaver BitmapFile
     /// </summary>
-    [SupportedOSPlatform("windows")]
     public class EasySaverBitmapFile
     {
         #region Saving
 
         // Saving file via Image.File().
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         private static void Save(string path, Bitmap bitmap)
         {
             // Saving bitmap with specified path.
@@ -22,6 +24,9 @@ namespace EasySaver.BitmapFile
         }
 
         // Saving file via Image.File() with try-catch exception. Calls Save(string path, Bitmap bitmap)
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         private static (bool, Exception?) SaveSafe(string path, Bitmap bitmap)
         {
             try
@@ -65,6 +70,9 @@ namespace EasySaver.BitmapFile
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool Save(Bitmap bitmap)
         {
             return Save(bitmap: bitmap, fileName: s_defaultFileName, namingFormat: s_defaultNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -76,6 +84,9 @@ namespace EasySaver.BitmapFile
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool Save(Bitmap bitmap, string fileName)
         {
             return Save(bitmap: bitmap, fileName: fileName, namingFormat: s_onlyBitmapProvidedNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -88,6 +99,9 @@ namespace EasySaver.BitmapFile
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param> 
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool Save(Bitmap bitmap, string fileName, NamingFormat namingFormat)
         {
             return Save(bitmap: bitmap, fileName: fileName, namingFormat: namingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -101,6 +115,9 @@ namespace EasySaver.BitmapFile
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool Save(Bitmap bitmap, string fileName, NamingFormat namingFormat, bool overwrite)
         {
             return Save(bitmap: bitmap, fileName: fileName, namingFormat: namingFormat, overwrite: overwrite, renameIfExists: s_defaultRenameIfExists);
@@ -115,6 +132,9 @@ namespace EasySaver.BitmapFile
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool Save(Bitmap bitmap, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
         {
             // Calls GetFileName() to decide fileName with adding extension at the end.
@@ -171,6 +191,9 @@ namespace EasySaver.BitmapFile
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool SaveToFolder(Bitmap bitmap)
         {
             return SaveToFolder(bitmap: bitmap, folderName: s_defaultFolderName, fileName: s_defaultFileName, namingFormat: s_defaultNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -182,6 +205,9 @@ namespace EasySaver.BitmapFile
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool SaveToFolder(Bitmap bitmap, string folderName)
         {
             return SaveToFolder(bitmap: bitmap, folderName: folderName, fileName: s_defaultFileName, namingFormat: s_defaultNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -194,6 +220,9 @@ namespace EasySaver.BitmapFile
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool SaveToFolder(Bitmap bitmap, string folderName, string fileName)
         {
             return SaveToFolder(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: s_onlyBitmapProvidedNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -207,6 +236,9 @@ namespace EasySaver.BitmapFile
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool SaveToFolder(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat)
         {
             return SaveToFolder(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: namingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -221,6 +253,9 @@ namespace EasySaver.BitmapFile
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool SaveToFolder(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat, bool overwrite)
         {
             return SaveToFolder(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: namingFormat, overwrite: overwrite, renameIfExists: s_defaultRenameIfExists);
@@ -236,10 +271,16 @@ namespace EasySaver.BitmapFile
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
         /// <returns>True or false.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static bool SaveToFolder(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
         {
             // Calls GetFileName() to decide fileName.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
+
+            // Checking if folderName is null or empty. If it is, it gets default folder name.
+            folderName = string.IsNullOrEmpty(folderName) ? s_defaultFolderName : folderName;
 
             // Checking if folder exists.
             if (CheckIfFolderExist(folderName) == false)
@@ -299,6 +340,9 @@ namespace EasySaver.BitmapFile
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveSafe(Bitmap bitmap)
         {
             return SaveSafe(bitmap: bitmap, fileName: s_defaultFileName, namingFormat: s_onlyBitmapProvidedNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -310,6 +354,9 @@ namespace EasySaver.BitmapFile
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName)
         {
             return SaveSafe(bitmap: bitmap, fileName: fileName, namingFormat: s_onlyBitmapProvidedNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -322,6 +369,9 @@ namespace EasySaver.BitmapFile
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, NamingFormat namingFormat)
         {
             return SaveSafe(bitmap: bitmap, fileName: fileName, namingFormat: namingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -335,6 +385,9 @@ namespace EasySaver.BitmapFile
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, NamingFormat namingFormat, bool overwrite)
         {
             return SaveSafe(bitmap: bitmap, fileName: fileName, namingFormat: namingFormat, overwrite: overwrite, renameIfExists: s_defaultRenameIfExists);
@@ -349,6 +402,9 @@ namespace EasySaver.BitmapFile
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveSafe(Bitmap bitmap, string fileName, NamingFormat namingFormat, bool overwrite = false, bool renameIfExists = true)
         {
             // Calls GetFileName() to decide fileName.
@@ -406,6 +462,9 @@ namespace EasySaver.BitmapFile
         /// </summary>
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveToFolderSafe(Bitmap bitmap)
         {
             return SaveToFolderSafe(bitmap: bitmap, folderName: s_defaultFolderName, fileName: s_defaultFileName, namingFormat: s_onlyBitmapProvidedNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -417,6 +476,9 @@ namespace EasySaver.BitmapFile
         /// <param name="bitmap">Bitmap file to save.</param>
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveToFolderSafe(Bitmap bitmap, string folderName)
         {
             return SaveToFolderSafe(bitmap: bitmap, folderName: folderName, fileName: s_defaultFileName, namingFormat: s_defaultNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -429,6 +491,9 @@ namespace EasySaver.BitmapFile
         /// <param name="fileName">Name of file when NamingFormat is Custom.</param>
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveToFolderSafe(Bitmap bitmap, string folderName, string fileName)
         {
             return SaveToFolderSafe(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: s_defaultNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -442,6 +507,9 @@ namespace EasySaver.BitmapFile
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveToFolderSafe(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat)
         {
             return SaveToFolderSafe(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: namingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
@@ -456,6 +524,9 @@ namespace EasySaver.BitmapFile
         /// <param name="namingFormat">NamingFormat option to apply.</param>
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveToFolderSafe(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat, bool overwrite)
         {
             return SaveToFolderSafe(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: namingFormat, overwrite: overwrite, renameIfExists: s_defaultRenameIfExists);
@@ -471,10 +542,16 @@ namespace EasySaver.BitmapFile
         /// <param name="overwrite">Specify if file should overwritten if file exists already.</param>
         /// <param name="renameIfExists">Specify if file should renamed with number if exists already.</param>
         /// <returns>True or false with exception.</returns>
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("windows")]
+#endif
         public static (bool, Exception?) SaveToFolderSafe(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)
         {
             // Calls GetFileName() to decide fileName.
             fileName = GetFileName(fileName: fileName, namingFormat: namingFormat);
+
+            // Checking if folderName is null or empty. If it is, it gets default folder name.
+            folderName = string.IsNullOrEmpty(folderName) ? s_defaultFolderName : folderName;
 
             // Checking if folder exists.
             if (CheckIfFolderExist(folderName) == false)

@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0; net7.0</TargetFrameworks>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Copyright>Enes Okullu</Copyright>
-    <AssemblyVersion>1.1.0</AssemblyVersion>
-    <FileVersion>1.1.0</FileVersion>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>1.2.0</FileVersion>
     <Title>Easy Saver Bitmap File</Title>
     <Company>Enes Okullu</Company>
     <Authors>Enes Okullu</Authors>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Description>EasySaver.Bitmap is package dependent on EasySaver for save bitmap files easily with different naming formats including custom, time, date and datetime.</Description>
     <PackageProjectUrl>meokullu.github.io/EasySaver/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -20,10 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>bitmap; bitmap-saving; file-saving; file</PackageTags>
     <PackageReleaseNotes>
-      v1.1.0
-      * CheckFolderIfExists() had parameter value bug in SaveToFolderSafe(). This bug is fixed. (#51)[https://github.com/meokullu/EasySaver/issues/51]
-      * CheckFileIfExists() had parameter value bug in SaveToFolderSave(). This bug is fixed. (#51)[https://github.com/meokullu/EasySaver/issues/51]
-
+      v1.2.0
+      * Multi-framework support for net7.0
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.BitmapFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
@@ -37,13 +35,6 @@
 
   <ItemGroup>
     <Content Include="Resources\icon.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -62,7 +53,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="README.md">
+    <None Include="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

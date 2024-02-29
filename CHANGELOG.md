@@ -11,6 +11,10 @@
 #### Removed
 -->
 
+### [1.2.0]
+#### Added
+* Multi-framework support for net7.0; net461; netcoreapp3.1; netstandard2.0
+
 ### [1.1.0]
 #### Added
 * `NamingFormat.LongTime`, `NamingFormat.LongDateTime`, `NamingFormat.LongDate`, `NamingFormat.ShortTime`, `NamingFormat.ShortDateTime` and `NamingFormat.ShortDate`are added.
