@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("EasySaver.TextFile")]
 [assembly: InternalsVisibleTo("EasySaver.BitmapFile")]
