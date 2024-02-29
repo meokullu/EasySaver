@@ -15,6 +15,9 @@
 #### Added
 * Multi-framework support for net7.0
 
+#### Fixed
+* `SaveToFolder()` and `SaveToFolderSafe()` was not saving a file when folderName is empty string. (#58)[https://github.com/meokullu/EasySaver/issues/58]
+
 ### [1.1.0]
 #### Fixed
 * CheckFolderIfExists() had parameter value bug in SaveToFolderSafe(). This bug is fixed. (#52)[https://github.com/meokullu/EasySaver/issues/52]
