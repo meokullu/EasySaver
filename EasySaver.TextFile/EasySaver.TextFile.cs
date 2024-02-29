@@ -193,7 +193,7 @@ namespace EasySaver.TextFile
         /// <param name="folderName">Folder name to create if doesn't exist and use for saving file.</param>
         public static bool SaveToFolder(string text, string folderName, string fileName)
         {
-            return SaveToFolder(text: text, folderName: folderName, fileName: fileName, NamingFormat.Custom, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
+            return SaveToFolder(text: text, folderName: folderName, fileName: fileName, s_onlyTextProvidedNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
         }
 
         /// <summary>
@@ -477,7 +477,7 @@ namespace EasySaver.TextFile
 
             // Checking if folder exists.
             if (CheckIfFolderExist(folderName) == false)
-            {
+            {   
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
                 _ = System.IO.Directory.CreateDirectory($"{folderName}\\");
             }

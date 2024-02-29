@@ -345,7 +345,7 @@ namespace EasySaver.BitmapFile
 #endif
         public static (bool, Exception?) SaveSafe(Bitmap bitmap)
         {
-            return SaveSafe(bitmap: bitmap, fileName: s_defaultFileName, namingFormat: s_onlyBitmapProvidedNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
+            return SaveSafe(bitmap: bitmap, fileName: s_defaultFileName, namingFormat: s_defaultNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
         }
 
         /// <summary>
@@ -467,7 +467,7 @@ namespace EasySaver.BitmapFile
 #endif
         public static (bool, Exception?) SaveToFolderSafe(Bitmap bitmap)
         {
-            return SaveToFolderSafe(bitmap: bitmap, folderName: s_defaultFolderName, fileName: s_defaultFileName, namingFormat: s_onlyBitmapProvidedNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
+            return SaveToFolderSafe(bitmap: bitmap, folderName: s_defaultFolderName, fileName: s_defaultFileName, namingFormat: s_defaultNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
         }
 
         /// <summary>
@@ -496,7 +496,7 @@ namespace EasySaver.BitmapFile
 #endif
         public static (bool, Exception?) SaveToFolderSafe(Bitmap bitmap, string folderName, string fileName)
         {
-            return SaveToFolderSafe(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: s_defaultNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
+            return SaveToFolderSafe(bitmap: bitmap, folderName: folderName, fileName: fileName, namingFormat: s_onlyBitmapProvidedNamingFormat, overwrite: s_defaultOverwrite, renameIfExists: s_defaultRenameIfExists);
         }
 
         /// <summary>

@@ -15,6 +15,9 @@
 #### Added
 * Multi-framework support for net7.0
 
+#### Changed
+* `SaveToFolder(string text, string folderName, string fileName)` was using `NamingFormat.Custom` instead of `s_onlyTextProvidedNamingFormat`
+
 #### Fixed
 * `SaveToFolder()` and `SaveToFolderSafe()` was not saving a file when folderName is empty string. (#58)[https://github.com/meokullu/EasySaver/issues/58]
 
