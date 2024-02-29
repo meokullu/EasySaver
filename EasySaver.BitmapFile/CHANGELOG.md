@@ -15,6 +15,10 @@
 #### Added
 * Multi-framework support for net7.0
 
+#### Changed
+* `SaveSafe(Bitmap bitmap)` and `SaveToFolderSafe(Bitmap bitmap)` was using `s_onlyBitmapProvidedNamingFormat` instead of `s_defaultNamingFormat`
+* `SaveToFolderSafe(Bitmap bitmap, string folderName, string fileName)` was using `s_defaultNamingFormat` instead of `s_onlyBitmapProvidedNamingFormat`
+
 #### Fixed
 * `SaveToFolder()` and `SaveToFolderSafe()` was not saving a file when folderName is empty string. (#58)[https://github.com/meokullu/EasySaver/issues/58]
 
