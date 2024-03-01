@@ -172,13 +172,18 @@ namespace EasySaver.BitmapFile
                 // File isn't save because _maxAttemptForRename is reached.
                 return false;
             }
-            else
+            else if (overwrite)
             {
                 // Saving file via Save().
                 Save(path: $"./{fileName}{s_defaultImageExtension}", bitmap: bitmap);
 
                 // Returning true as successful process.
                 return true;
+            }
+            else
+            {
+                // Returning false as failed process.
+                return false;
             }
         }
 
@@ -321,13 +326,18 @@ namespace EasySaver.BitmapFile
                 // File isn't save because _maxAttemptForRename is reached.
                 return false;
             }
-            else
+            else if (overwrite)
             {
                 // Saving file via Save().
                 Save(path: $"./{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
 
                 // Returning true as successful process.
                 return true;
+            }
+            else
+            {
+                // Returning false as failed process.
+                return false;
             }
         }
 
@@ -432,7 +442,7 @@ namespace EasySaver.BitmapFile
                     if (CheckIfFileExist(path: $"{fileName}({i}){s_defaultImageExtension}") == false)
                     {
                         // Saving file via SaveSafe().
-                        (bool, Exception?) result = SaveSafe(path: $"{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap);
+                        (bool, Exception?) result = SaveSafe(path: $"./{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap);
 
                         // Returning result to indicate if process is successful or failed with exception.
                         return result;
@@ -443,13 +453,18 @@ namespace EasySaver.BitmapFile
                 return (false, new ArgumentOutOfRangeException(paramName: null, message: MaxAttemptMessage(MethodBase.GetCurrentMethod()!.Name)));
             }
             // If file exists, overwrite is false but renameIfExist is true. File will be renamed and both of them will be kept.
-            else
+            else if (overwrite)
             {
                 // Saving file via SaveSafe().
                 (bool, Exception?) result = SaveSafe(path: $"./{fileName}{s_defaultImageExtension}", bitmap: bitmap);
 
                 // Returning result to indicate if process is successful or failed with exception.
                 return result;
+            }
+            else
+            {
+                // Returning false as failed process.
+                return (false, new Exception("File not saved."));
             }
         }
 
@@ -582,7 +597,7 @@ namespace EasySaver.BitmapFile
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i}){s_defaultImageExtension}") == false)
                     {
                         // Saving file via SaveSafe().
-                        (bool, Exception?) result = SaveSafe(path: $"{folderName}{fileName}{s_defaultImageExtension}", bitmap: bitmap);
+                        (bool, Exception?) result = SaveSafe(path: $"./{folderName}{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap);
 
                         // Returning result to indicate if process is successful or failed with exception.
                         return result;
@@ -592,13 +607,18 @@ namespace EasySaver.BitmapFile
                 // Returning false with an exception of maximum attempt is reached to rename file.
                 return (false, new ArgumentOutOfRangeException(paramName: null, message: MaxAttemptMessage(MethodBase.GetCurrentMethod()!.Name)));
             }
-            else
+            else if (overwrite)
             {
                 // Saving file via SaveSafe().
                 (bool, Exception?) result = SaveSafe(path: $"./{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
 
                 // Returning result to indicate if process is successful or failed with exception.
                 return result;
+            }
+            else
+            {
+                // Returning false as failed process.
+                return (false, new Exception("File not saved."));
             }
         }
 

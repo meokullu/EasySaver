@@ -11,6 +11,15 @@
 #### Removed
 -->
 
+### [2.0.0]
+#### Changed
+* `Save()`, `SafeSafe()`, `SaveToFolder()` and `SaveToFolderSafe()` now check if `overwrite` is `true` and save the file otherwise it doesn't save the file.
+* `SaveSafe()` was using path "fileName + s_defaultTextExtension" instead of "$"./{fileName}{s_defaultTextExtension}" when `fileExsists` is `false`.
+
+#### Fixed
+* `SaveSafe()` was using when `overwrite` is `false` and `renameIfExists` `true` "path: $"./{fileName}({i}{s_defaultTextExtension}", missing ")" character is added.
+* `SaveToFolderSafe()` was using "path: $"./{fileName}{s_defaultTextExtension}" when `overwrite` is `true` instead of $"./{folderName}/{fileName}{s_defaultTextExtension}"
+
 ### [1.2.0]
 #### Added
 * Multi-framework support for net7.0
