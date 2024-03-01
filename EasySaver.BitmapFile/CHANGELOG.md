@@ -11,6 +11,15 @@
 #### Removed
 -->
 
+### [2.0.0]
+#### Changed
+* `Save()`, `SafeSafe()`, `SaveToFolder()` and `SaveToFolderSafe()` now check if `overwrite` is `true` and save the file otherwise it doesn't save the file.
+* `SaveSafe()` was using "path: $"{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap" instead of "path: $"./{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap" when `overwrite` is `false` and `renameIfExists` is `true`.
+* `SaveToFolderSafe()` was using "path: $"./{fileName}{s_defaultImageExtension}", bitmap: bitmap" instead of "path: $"./{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap" when `overwrite` is `false` and `renameIfExists` is `true`.
+
+#### Fixed
+* "({i})" added into `SaveToFolderSafe()` when `overwrite` is `false` and `renameIfExists` is `true`.
+
 ### [1.2.0]
 #### Added
 * Multi-framework support for net7.0

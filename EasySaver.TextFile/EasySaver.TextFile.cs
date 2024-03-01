@@ -153,13 +153,18 @@ namespace EasySaver.TextFile
                 // File isn't save because _maxAttemptForRename is reached.
                 return false;
             }
-            else
+            else if (overwrite)
             {
                 // Saving file via WriteViaStreamWriter().
                 WriteViaStreamWriter(path: $"./{fileName}{s_defaultTextExtension}", text: text);
 
                 // Returning true as successful process.
                 return true;
+            }
+            else
+            {
+                // Returning false as failed process.
+                return false;
             }
         }
 
@@ -277,13 +282,18 @@ namespace EasySaver.TextFile
                 // File isn't save because _maxAttemptForRename is reached.
                 return false;
             }
-            else
+            else if (overwrite)
             {
                 // Saving file via WriteViaStreamWriter().
                 WriteViaStreamWriter(path: $"./{folderName}/{fileName}{s_defaultTextExtension}", text: text);
 
                 // Returning true as successful process.
                 return true;
+            }
+            else
+            {
+                // Returning false as failed process.
+                return false;
             }
         }
 
@@ -358,7 +368,7 @@ namespace EasySaver.TextFile
             if (fileExists == false)
             {
                 // Saving file via SaveSafe().
-                (bool, Exception?) result = WriteViaStreamWriterSafe(path: fileName + s_defaultTextExtension, text: text);
+                (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{fileName}{s_defaultTextExtension}", text: text);
 
                 // Returning result to indicate if process is successful or failed with exception.
                 return result;
@@ -373,7 +383,7 @@ namespace EasySaver.TextFile
                     if (CheckIfFileExist(path: $"{fileName}({i}){s_defaultTextExtension}") == false)
                     {
                         // Saving file via WriteViaStreamWriterSafe().
-                        (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{fileName}({i}{s_defaultTextExtension}", text: text);
+                        (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{fileName}({i}){s_defaultTextExtension}", text: text);
 
                         // Returning result to indicate if process is successful or failed with exception.
                         return result;
@@ -384,13 +394,18 @@ namespace EasySaver.TextFile
                 return (false, new ArgumentOutOfRangeException(paramName: null, message: MaxAttemptMessage(MethodBase.GetCurrentMethod()!.Name)));
             }
             // If file exists, overwrite is false but renameIfExist is true. File will be renamed and both of them will be kept.
-            else
+            else if (overwrite)
             {
                 // Saving file via WriteViaStreamWriterSafe().
                 (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{fileName}{s_defaultTextExtension}", text: text);
 
                 // Returning result to indicate if process is successful or failed with exception.
                 return result;
+            }
+            else
+            {
+                // Returning false as failed process.
+                return (false, new Exception("File not saved."));
             }
         }
 
@@ -514,13 +529,18 @@ namespace EasySaver.TextFile
                 // Returning false with an exception of maximum attempt is reached to rename file.
                 return (false, new ArgumentOutOfRangeException(paramName: null, message: MaxAttemptMessage(MethodBase.GetCurrentMethod()!.Name)));
             }
-            else
+            else if (overwrite)
             {
                 // Saving file via WriteViaStreamWriterSafe().
-                (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{fileName}{s_defaultTextExtension}", text: text);
+                (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{folderName}/{fileName}{s_defaultTextExtension}", text: text);
 
                 // Returning result to indicate if process is successful or failed with exception.
                 return result;
+            }
+            else
+            {
+                // Returning false as failed process.
+                return (false, new Exception("File not saved."));
             }
         }
 
