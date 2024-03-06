@@ -11,6 +11,10 @@
 #### Removed
 -->
 
+### [2.1.0]
+#### Fixed
+* `SaveToFolderSafe()` was missing "/" between `folderName` and `fileName` when file was existing and parameter `renameIfExists` set `true`.
+
 ### [2.0.0]
 #### Changed
 * `Save()`, `SafeSafe()`, `SaveToFolder()` and `SaveToFolderSafe()` now check if `overwrite` is `true` and save the file otherwise it doesn't save the file.
