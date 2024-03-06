@@ -597,7 +597,7 @@ namespace EasySaver.BitmapFile
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i}){s_defaultImageExtension}") == false)
                     {
                         // Saving file via SaveSafe().
-                        (bool, Exception?) result = SaveSafe(path: $"./{folderName}{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap);
+                        (bool, Exception?) result = SaveSafe(path: $"./{folderName}/{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap);
 
                         // Returning result to indicate if process is successful or failed with exception.
                         return result;
