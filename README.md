@@ -3,7 +3,7 @@
 
 EasySaver is a multi-solution package to save bitmap image files and text files easily with different naming formats including `Custom`, `LongDate`, `ShortDate`, `LongTime`, `ShortTime`, `LongDateTime` and `ShortDateTime`.
 
-![EasySaver](https://github.com/meokullu/EasySaver/assets/4971757/14a08083-5db9-4a28-b578-2964ab52a1d2)
+![EasySaver](https://github.com/meokullu/EasySaver/assets/4971757/8e11e803-36ce-4dfc-a04d-b1251caefd00)
 
 [Download on NuGet gallery](https://www.nuget.org/packages/EasySaver/)
 
@@ -24,16 +24,34 @@ EasySaver has one common and two external packages. Common package have several 
 NamingFormat.Custom
 ```
 
+> {hour}-{minute}-{second}-{millisecond}
 ```
 NamingFormat.LongTime
 ```
 
+> {hour}-{minute}-{second}
+```
+NamingFormat.ShortTime
+```
+
+> {year}-{month}-{day}
 ```
 NamingFormat.LongDate
 ```
 
+> {month}-{day}
+```
+NamingFormat.ShortDate
+```
+
+> {year}-{month}-{day}-{hour}-{minute}-{second}-{millisecond}
 ```
 NamingFormat.LongDateTime
+```
+
+> {month}-{day}-{hour}-{minute}-{second}
+```
+NamingFormat.ShortDateTime
 ```
 
 To check listed/unlisted methods, example of output visit wiki page. [EasySaver Wiki](https://github.com/meokullu/EasySaver/wiki)
