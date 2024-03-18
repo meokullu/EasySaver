@@ -24,7 +24,6 @@
 * `TodayString` and `NowString` are obsolete now. You can use `LongDayString` and `LongTimeString` respectively.
 
 ### [1.0.0]
-
 #### Changed
 * Internal variable `s_maxAttemptForRename` is moved from RandomNaming.cs to EasySaver.Common.cs
 * `MaxAttemptMessage(string methodName)` is moved from RandomNaming.cs to EasySaver.Common.cs
@@ -45,31 +44,26 @@
 * `NamingFormat.RandomName` and random naming has its own class as `RandomNaming.cs` under src folder.
 
 ### [1.0.0-alpha.6]
-
 #### Changed
 * New design README.
 * New design CHANGELOG.
 
 ### [1.0.0-alpha.5]
-
 #### Changed
 * New icon.
 * README updated
 
 ### [1.0.0-alpha.4]
-
 #### Added
 * CHANGELOG link added under Version History on README.
 * EasySaver.BitmapFile README link added.
 * EasySaver.TextFile README link added.
 
 ### [1.0.0-alpha.3]
-
 #### Added
 * Updated README.
 
 ### [1.0.0-alpha.2]
-
 #### Added
 * Licence is added.
 
