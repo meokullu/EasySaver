@@ -49,17 +49,17 @@ namespace EasySaver.BitmapFile
         #region Default Choices
 
         // Default value if FileName is not provided.
-        private readonly static string s_defaultFileName = "";
+        private static readonly string s_defaultFileName = "";
 
         // Default value if NamingFormat is not provided.
-        private readonly static NamingFormat s_defaultNamingFormat = NamingFormat.LongDateTime;
+        private static readonly NamingFormat s_defaultNamingFormat = NamingFormat.LongDateTime;
 
         // Default value when using Save(Bitmap bitmap, string fileName) and SaveToFolder(Bitmap bitmap, string folderName, string fileName). Since there is only NamingFormat option available to use by design, this value is internally provided for shorter method usage.
-        private readonly static NamingFormat s_onlyBitmapProvidedNamingFormat = NamingFormat.Custom;
+        private static readonly NamingFormat s_onlyBitmapProvidedNamingFormat = NamingFormat.Custom;
 
-        private readonly static string s_defaultFolderName = "Data";
-        private readonly static bool s_defaultOverwrite = false;
-        private readonly static bool s_defaultRenameIfExists = true;
+        private static readonly string s_defaultFolderName = "Data";
+        private static readonly bool s_defaultOverwrite = false;
+        private static readonly bool s_defaultRenameIfExists = true;
 
         #endregion Default Choices
 
@@ -301,7 +301,7 @@ namespace EasySaver.BitmapFile
             if (ifExists == false)
             {
                 // Saving file via Save().
-                Save(path: $"./{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
+                Save(path: $"{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
 
                 // Returning true as successful process.
                 return true;
@@ -316,7 +316,7 @@ namespace EasySaver.BitmapFile
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i}){s_defaultImageExtension}") == false)
                     {
                         // Saving file via Save().
-                        Save(path: $"./{folderName}/{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap);
+                        Save(path: $"{folderName}/{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap);
 
                         // Returning true as successful process.
                         return true;
@@ -329,7 +329,7 @@ namespace EasySaver.BitmapFile
             else if (overwrite)
             {
                 // Saving file via Save().
-                Save(path: $"./{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
+                Save(path: $"{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
 
                 // Returning true as successful process.
                 return true;
@@ -464,7 +464,7 @@ namespace EasySaver.BitmapFile
             else
             {
                 // Returning false as failed process.
-                return (false, new Exception("File not saved."));
+                return (false, new Exception($"File:{fileName} not saved."));
             }
         }
 
@@ -582,7 +582,7 @@ namespace EasySaver.BitmapFile
             if (fileExists == false)
             {
                 // Saving file via SaveSafe().
-                (bool, Exception?) result = SaveSafe(path: $"./{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
+                (bool, Exception?) result = SaveSafe(path: $"{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
 
                 // Returning result to indicate if process is successful or failed with exception.
                 return result;
@@ -597,7 +597,7 @@ namespace EasySaver.BitmapFile
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i}){s_defaultImageExtension}") == false)
                     {
                         // Saving file via SaveSafe().
-                        (bool, Exception?) result = SaveSafe(path: $"./{folderName}/{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap);
+                        (bool, Exception?) result = SaveSafe(path: $"{folderName}/{fileName}({i}){s_defaultImageExtension}", bitmap: bitmap);
 
                         // Returning result to indicate if process is successful or failed with exception.
                         return result;
@@ -610,7 +610,7 @@ namespace EasySaver.BitmapFile
             else if (overwrite)
             {
                 // Saving file via SaveSafe().
-                (bool, Exception?) result = SaveSafe(path: $"./{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
+                (bool, Exception?) result = SaveSafe(path: $"{folderName}/{fileName}{s_defaultImageExtension}", bitmap: bitmap);
 
                 // Returning result to indicate if process is successful or failed with exception.
                 return result;
@@ -618,7 +618,7 @@ namespace EasySaver.BitmapFile
             else
             {
                 // Returning false as failed process.
-                return (false, new Exception("File not saved."));
+                return (false, new Exception($"File:{fileName} not saved."));
             }
         }
 

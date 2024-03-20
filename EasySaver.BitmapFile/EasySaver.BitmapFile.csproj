@@ -7,12 +7,12 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Copyright>Enes Okullu</Copyright>
-    <AssemblyVersion>2.1.0</AssemblyVersion>
-    <FileVersion>2.1.0</FileVersion>
+    <AssemblyVersion>2.2.0</AssemblyVersion>
+    <FileVersion>2.2.0</FileVersion>
     <Title>Easy Saver Bitmap File</Title>
     <Company>Enes Okullu</Company>
     <Authors>Enes Okullu</Authors>
-    <Version>2.1.0</Version>
+    <Version>2.2.0</Version>
     <Description>EasySaver.Bitmap is package dependent on EasySaver for save bitmap files easily with different naming formats including custom, time, date and datetime.</Description>
     <PackageProjectUrl>meokullu.github.io/EasySaver/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -20,8 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>bitmap; bitmap-saving; file-saving; file</PackageTags>
     <PackageReleaseNotes>
-      v2.1.0
-      * SaveToFolderSafe() was missing "/" between folderName and fileName when file was existing and parameter renameIfExists set true.
+      v2.2.0
+      * All methods that work with SaveToFolder() or SaveToFolderSafe() was throwing an error when folderName is provided with default system values such as Environment.GetFolderPath(Environment.SpecialFolder.Desktop).
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.BitmapFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>

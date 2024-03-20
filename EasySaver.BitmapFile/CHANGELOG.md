@@ -11,6 +11,10 @@
 #### Removed
 -->
 
+### [2.2.0]
+#### Fixed
+* All methods that work with `SaveToFolder()` or `SaveToFolderSafe()` was throwing an error when folderName is provided with default system values such as `Environment.GetFolderPath(Environment.SpecialFolder.Desktop)`
+
 ### [2.1.0]
 #### Fixed
 * `SaveToFolderSafe()` was missing "/" between `folderName` and `fileName` when file was existing and parameter `renameIfExists` set `true`.
