@@ -11,6 +11,11 @@
 #### Removed
 -->
 
+### [2.1.0]
+#### Fixed
+* All methods that work with `SaveToFolder()` or `SaveToFolderSafe()` was throwing an error when folderName is provided with default system values such as `Environment.GetFolderPath(Environment.SpecialFolder.Desktop)`
+
+
 ### [2.0.0]
 #### Changed
 * `Save()`, `SafeSafe()`, `SaveToFolder()` and `SaveToFolderSafe()` now check if `overwrite` is `true` and save the file otherwise it doesn't save the file.

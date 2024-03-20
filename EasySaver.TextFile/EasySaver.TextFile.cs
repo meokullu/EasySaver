@@ -45,17 +45,17 @@ namespace EasySaver.TextFile
         #region Default Choices
 
         // Default value if FileName is not provided.
-        private readonly static string s_defaultFileName = "";
+        private static readonly string s_defaultFileName = "";
 
         // Default value if NamingFormat is not provided.
-        private readonly static NamingFormat s_defaultNamingFormat = NamingFormat.LongDateTime;
+        private static readonly NamingFormat s_defaultNamingFormat = NamingFormat.LongDateTime;
 
         // Default value when using Save(string text, string fileName) and SaveToFolder(string text, string folderName, string fileName). Since there is only NamingFormat option available to use by design, this value is internally provided for shorter method usage.
-        private readonly static NamingFormat s_onlyTextProvidedNamingFormat = NamingFormat.Custom;
+        private static readonly NamingFormat s_onlyTextProvidedNamingFormat = NamingFormat.Custom;
 
-        private readonly static string s_defaultFolderName = "Data";
-        private readonly static bool s_defaultOverwrite = false;
-        private readonly static bool s_defaultRenameIfExists = true;
+        private static readonly string s_defaultFolderName = "Data";
+        private static readonly bool s_defaultOverwrite = false;
+        private static readonly bool s_defaultRenameIfExists = true;
 
         #endregion Default Choices
 
@@ -257,7 +257,7 @@ namespace EasySaver.TextFile
             if (fileExists == false)
             {
                 // Saving file via WriteViaStreamWriter().
-                WriteViaStreamWriter(path: $"./{folderName}/{fileName}{s_defaultTextExtension}", text: text);
+                WriteViaStreamWriter(path: $"{folderName}/{fileName}{s_defaultTextExtension}", text: text);
 
                 // Returning true as successful process.
                 return true;
@@ -272,7 +272,7 @@ namespace EasySaver.TextFile
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i}){s_defaultTextExtension}") == false)
                     {
                         // Saving file via WriteViaStreamWriter().
-                        WriteViaStreamWriter(path: $"./{folderName}/{fileName}({i}){s_defaultTextExtension}", text: text);
+                        WriteViaStreamWriter(path: $"{folderName}/{fileName}({i}){s_defaultTextExtension}", text: text);
 
                         // Returning true as successful process.
                         return true;
@@ -285,7 +285,7 @@ namespace EasySaver.TextFile
             else if (overwrite)
             {
                 // Saving file via WriteViaStreamWriter().
-                WriteViaStreamWriter(path: $"./{folderName}/{fileName}{s_defaultTextExtension}", text: text);
+                WriteViaStreamWriter(path: $"{folderName}/{fileName}{s_defaultTextExtension}", text: text);
 
                 // Returning true as successful process.
                 return true;
@@ -405,7 +405,7 @@ namespace EasySaver.TextFile
             else
             {
                 // Returning false as failed process.
-                return (false, new Exception("File not saved."));
+                return (false, new Exception($"File:{fileName} not saved."));
             }
         }
 
@@ -504,7 +504,7 @@ namespace EasySaver.TextFile
             if (fileExist == false)
             {
                 // Saving file via WriteViaStreamWriterSafe().
-                (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{folderName}/{fileName}{s_defaultTextExtension}", text: text);
+                (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"{folderName}/{fileName}{s_defaultTextExtension}", text: text);
 
                 // Returning result to indicate if process is successful or failed with exception.
                 return result;
@@ -519,7 +519,7 @@ namespace EasySaver.TextFile
                     if (CheckIfFileExist(path: $"{folderName}/{fileName}({i}){s_defaultTextExtension}") == false)
                     {
                         // Saving file via SaveSafe().
-                        (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{folderName}/{fileName}({i}){s_defaultTextExtension}", text: text);
+                        (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"{folderName}/{fileName}({i}){s_defaultTextExtension}", text: text);
 
                         // Returning result to indicate if process is successful or failed with exception.
                         return result;
@@ -532,7 +532,7 @@ namespace EasySaver.TextFile
             else if (overwrite)
             {
                 // Saving file via WriteViaStreamWriterSafe().
-                (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"./{folderName}/{fileName}{s_defaultTextExtension}", text: text);
+                (bool, Exception?) result = WriteViaStreamWriterSafe(path: $"{folderName}/{fileName}{s_defaultTextExtension}", text: text);
 
                 // Returning result to indicate if process is successful or failed with exception.
                 return result;
@@ -540,7 +540,7 @@ namespace EasySaver.TextFile
             else
             {
                 // Returning false as failed process.
-                return (false, new Exception("File not saved."));
+                return (false, new Exception($"File:{fileName} not saved."));
             }
         }
 

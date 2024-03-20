@@ -7,9 +7,9 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Title>Easy Saver Text File</Title>
-    <AssemblyVersion>2.0.0</AssemblyVersion>
-    <FileVersion>2.0.0</FileVersion>
-    <Version>2.0.0</Version>
+    <AssemblyVersion>2.1.0</AssemblyVersion>
+    <FileVersion>2.1.0</FileVersion>
+    <Version>2.1.0</Version>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
     <Description>EasySaver.TextFile package is dependent on Easy Saver. It offers methods to save text files easily.</Description>
@@ -20,12 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>text; text-saving; file; file-saving</PackageTags>
     <PackageReleaseNotes>
-      v2.0.0
-      * Save()`, `SafeSafe()`, `SaveToFolder()` and SaveToFolderSafe() now check if overwrite is true and save the file otherwise it doesn't save the file.
-      * SaveSafe() was using path "fileName + s_defaultTextExtension" instead of "$"./{fileName}{s_defaultTextExtension}" when fileExsists is false.
-      * SaveSafe() was using when overwrite is false and renameIfExists true "path: $"./{fileName}({i}{s_defaultTextExtension}", missing ")" character is added.
-      * SaveToFolderSafe() was using "path: $"./{fileName}{s_defaultTextExtension}" when overwrite is true instead of $"./{folderName}/{fileName}{s_defaultTextExtension}"
-
+      v2.1.0
+      * All methods that work with SaveToFolder() or SaveToFolderSafe was throwing an error when folderName is provided with default system values such as Environment.GetFolderPath(Environment.SpecialFolder.Desktop).
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.TextFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
