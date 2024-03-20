@@ -7,17 +7,18 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Easy Saver</Title>
     <Copyright>Enes Okullu</Copyright>
-    <AssemblyVersion>1.2.0</AssemblyVersion>
-    <FileVersion>1.2.0</FileVersion>
+    <AssemblyVersion>1.3.0</AssemblyVersion>
+    <FileVersion>1.3.0</FileVersion>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
     <PackageTags>File; Saving; Save;</PackageTags>
     <PackageReleaseNotes>
-      v1.2.0
-      Multi-framework support for net7.0; net461; netcoreapp3.1; netstandard2.0
+      v1.3.0
+
+
       See changelog (https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -51,6 +52,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="EasySaver.TextFile" />
+    <InternalsVisibleTo Include="EasySaver.BitmapFile" />
+    <InternalsVisibleTo Include="EasySaverTest" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />    
+
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -74,7 +82,6 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="src\" />
   </ItemGroup>
 
 </Project>

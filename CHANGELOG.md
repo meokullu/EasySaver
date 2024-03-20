@@ -11,6 +11,16 @@
 #### Removed
 -->
 
+### [1.3.0]
+#### Added
+* EasySaver.Common.cs is splitted into AppName.cs, CallerMethodName.cs, DateTime.cs, DefaultExtension.cs, Exist.cs, GetFileName.cs, MaxAttempt.cs, NamingFormat.cs and Path.cs.
+* `AppName` added under AppName.cs
+* `CallerMethodName1-8` added under CallerMethodName.cs
+* `ShortDateString` and `ShortTimeString` added under DateTime.cs
+* `DesktopPath` added under Path.cs
+#### Changed
+* `LongDayString` is marked as obsolote due to hypo. Use `LongDayString` instead.
+
 ### [1.2.0]
 #### Added
 * Multi-framework support for net7.0; net461; netcoreapp3.1; netstandard2.0
