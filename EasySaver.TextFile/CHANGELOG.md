@@ -40,12 +40,10 @@
 * CheckFolderIfExists() had parameter value bug in SaveToFolderSafe(). This bug is fixed. (#52)[https://github.com/meokullu/EasySaver/issues/52]
 
 ### [1.0.0]
-
 #### Changed
 * Naming inconventions are fixed on internal variables.
 
 ### [1.0.0-beta]
-
 #### Changed
 * Fixed misleading method links on summaries.
 * Renamed private variable.
@@ -61,7 +59,6 @@
 * Added method references to summaries.
 
 ### [1.0.0-alpha.5]
-
 #### Added
 * `Save(string text)` method added.
 * `Save(string text, string fileName)`method added.
@@ -99,7 +96,6 @@
 * `SaveSafe(string text, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method is deprecated. You can use `SaveToFolderSafe(string text, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
 
 ### [1.0.0-alpha.4]
-
 ### Added
 * Summaries to methods.
 * Comments to processes.
@@ -109,7 +105,6 @@
 * README updated.
 
 ### [1.0.0-alpha.3]
-
 #### Added
 * Download Nuget link added on README.
 * CHANGELOG link added under Version History on README.
@@ -120,12 +115,10 @@
 * Folder name changed from EasySaver.Text to EasySaver.TextFile.
 
 ### [1.0.0-alpha.2]
-
 #### Changed
 * Updated README
 
 ### [1.0.0-alpha.1]
-
 #### Changed
 * Updated README
 

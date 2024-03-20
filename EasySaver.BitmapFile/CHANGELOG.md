@@ -45,12 +45,10 @@
 * CheckFileIfExists() had parameter value bug in SaveToFolderSave(). This bug is fixed. (#51)[https://github.com/meokullu/EasySaver/issues/51]
 
 ### [1.0.0]
-
 #### Changed
 * Naming inconventions is fixed on internal variables.
 
 ### [1.0.0-beta]
-
 #### Changed
 * Renaming private variable.
 * Fixed misleading method links on summaries.
@@ -60,14 +58,12 @@
 * `SaveSafe(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method was deprecated. Method is removed, you can use `SaveToFolderSafe(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
 
 ### [1.0.0-alpha.7]
-
 #### Changed
 * New design README.
 * New design CHANGELOG.
 * Added method references to summaries.
 
 ### [1.0.0-alpha.6]
-
 #### Added
 * `Save(Bitmap bitmap)` method added.
 * `Save(Bitmap bitmap, string fileName)`method added.
@@ -104,7 +100,6 @@
 * `SaveSafe(Bitmap bitmap, string fileName, string folderName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` method is deprecated. You can use `SaveToFolderSafe(Bitmap bitmap, string folderName, string fileName, NamingFormat namingFormat, bool overwrite, bool renameIfExists)` instead.
 
 ### [1.0.0-alpha.5]
-
 #### Added
 * Summaries to methods.
 * Comments to processes.
@@ -114,7 +109,6 @@
 * README updated.
 
 ### [1.0.0-alpha.4]
-
 #### Added
 * Licence added.
 * Download Nuget link added on README.
@@ -126,17 +120,14 @@
 * Folder name changed from EasySaver.Bitmap to EasySaver.BitmapFile.
 
 ### [1.0.0-alpha.3]
-
 #### Changed
 * Updated README
 
 ### [1.0.0-alpha.2]
-
 #### Changed
 * Updated README
 
 ### [1.0.0-alpha.1]
-
 #### Changed
 * Updated README
 
