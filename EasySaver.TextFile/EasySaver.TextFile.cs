@@ -6,7 +6,7 @@ using static EasySaver.Common.EasySaver;
 namespace EasySaver.TextFile
 {
     /// <summary>
-    /// EasySaver TextFile
+    /// EasySaver TextFile.
     /// </summary>
     public class EasySaverTextFile
     {
