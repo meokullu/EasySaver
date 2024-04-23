@@ -1,5 +1,8 @@
 ﻿namespace EasySaver.Common
 {
+    /// <summary>
+    /// Application name.
+    /// </summary>
     public partial class EasySaver
     {
         /// <summary>

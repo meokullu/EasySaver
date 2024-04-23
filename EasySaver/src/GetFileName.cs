@@ -16,13 +16,9 @@ namespace EasySaver.Common
             // The reason that extension is not added here, because of in case of repeatence filename might has a name like file(1).
             // If extension would be added here, it would look like as file.txt(1).
 
-            //TODO: Remove .DateTime, .Date and .Time when new version is introduced after making them obsolete.
-            // Checking if naming format is LongDateTime, LongDate, LongTime so GetFormattedDateTimeStamp() returns available file name.
-#pragma warning disable CS0618 // Type or member is obsolete
+            // Checking if naming format is LongDateTime, LongDate, LongTime, ShortDateTime, ShortDate or ShortTime so GetFormattedDateTimeStamp() returns available file name.
+
             if (
-                namingFormat == NamingFormat.DateTime ||
-                namingFormat == NamingFormat.Date ||
-                namingFormat == NamingFormat.Time ||
                 namingFormat == NamingFormat.LongDateTime ||
                 namingFormat == NamingFormat.LongDate ||
                 namingFormat == NamingFormat.LongTime ||
@@ -50,7 +46,6 @@ namespace EasySaver.Common
                 //
                 throw new Exception("NamingFormat is not correct.");
             }
-#pragma warning restore CS0618 // Type or member is obsolete
         }
     }
 }

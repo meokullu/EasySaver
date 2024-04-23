@@ -5,26 +5,6 @@ namespace EasySaver.Common
     public partial class EasySaver
     {
         /// <summary>
-        /// {year}-{month}-{day}
-        /// </summary>
-        /// <returns></returns>
-        [Obsolete("Use LongDayString")]
-        public static string TodayString => GetFormattedDateTimeStamp(NamingFormat.Date);
-
-        /// <summary>
-        /// Returns {hour}-{minute}-{second}-{millisecond} as string.
-        /// </summary>
-        /// <returns></returns>
-        [Obsolete("Use LongTimeString")]
-        public static string NowString => GetFormattedDateTimeStamp(NamingFormat.Time);
-
-        /// <summary>
-        /// Return {year}-{month}-{day} as string.
-        /// </summary>
-        [Obsolete("Type fixed. Use LongDateString instead.")]
-        public static string LongDayString => GetFormattedDateTimeStamp(NamingFormat.LongDate);
-
-        /// <summary>
         /// Return {year}-{month}-{day} as string.
         /// </summary>
         public static string LongDateString => GetFormattedDateTimeStamp(NamingFormat.LongDate);
@@ -77,10 +57,8 @@ namespace EasySaver.Common
             string second = dateTime.ToString("ss");
             string millisecond = dateTime.ToString("fff");
 
-            //TODO: Remove .DateTime, .Date and .Time when new version is introduced after making them obsolete.
             //
-#pragma warning disable CS0618 // Type or member is obsolete
-            if (namingFormat == NamingFormat.Time || namingFormat == NamingFormat.LongTime)
+            if (namingFormat == NamingFormat.LongTime)
             {
                 //
                 return $"{hour}-{minute}-{second}-{millisecond}";
@@ -90,7 +68,7 @@ namespace EasySaver.Common
                 //
                 return $"{hour}-{minute}-{second}";
             }
-            else if (namingFormat == NamingFormat.Date || namingFormat == NamingFormat.LongDate)
+            else if ( namingFormat == NamingFormat.LongDate)
             {
                 //
                 return $"{year}-{month}-{day}";
@@ -100,7 +78,7 @@ namespace EasySaver.Common
                 //
                 return $"{month}-{day}";
             }
-            else if (namingFormat == NamingFormat.DateTime || namingFormat == NamingFormat.LongDateTime)
+            else if (namingFormat == NamingFormat.LongDateTime)
             {
                 //
                 return $"{year}-{month}-{day}-{hour}-{minute}-{second}-{millisecond}";
@@ -115,7 +93,6 @@ namespace EasySaver.Common
                 //
                 throw new NotImplementedException();
             }
-#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         #endregion Get DateTime

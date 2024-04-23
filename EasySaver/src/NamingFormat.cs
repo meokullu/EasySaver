@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasySaver.Common
 {
@@ -17,21 +13,7 @@ namespace EasySaver.Common
             /// File name will consist only given text itself.
             /// </summary>
             Custom = 1,
-            /// <summary>
-            /// File name will consist time data.
-            /// </summary>
-            [Obsolete("Use LongTime")]
-            Time = 2,
-            /// <summary>
-            /// File name will consist date and time data.
-            /// </summary>
-            [Obsolete("Use LongDateTime")]
-            DateTime = 3,
-            /// <summary>
-            /// File name will consist date data.
-            /// </summary>
-            [Obsolete("Use LongDate")]
-            Date = 4,
+            
             ///// <summary>
             ///// File name will consist random name that chosen from populated or prepopulated name list.
             ///// </summary>
