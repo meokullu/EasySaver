@@ -11,6 +11,11 @@
 #### Removed
 -->
 
+### [1.4.0]
+#### Removed
+* `TodayString`, `NowString` and `LongDayString` are removed as `NamingFormat`.
+* `NamingFormat.Time`, `NamingFormat.Date` and `NamingFormat.DateTime` are removed as a condition in `GetFormattedDateTimeStamp(NamingFormat namingFormat)` and `GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.LongDateTime)` internal method. 
+
 ### [1.3.0]
 #### Added
 * EasySaver.Common.cs is splitted into AppName.cs, CallerMethodName.cs, DateTime.cs, DefaultExtension.cs, Exist.cs, GetFileName.cs, MaxAttempt.cs, NamingFormat.cs and Path.cs.
