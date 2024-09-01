@@ -5,11 +5,18 @@ EasySaver.BitmapFile is a package to save bitmap files easily with different nam
 
 ![EasySaver](https://github.com/meokullu/EasySaver/assets/4971757/830f74f1-eab8-44eb-9211-ed61c11074df)
 
+### Description
+This is README file for EasySaver.BitmapFile.
+
+### How to download
+Release: [Latest release](https://github.com/meokullu/EasySaver/releases/latest)
+
 [Download on NuGet gallery](https://www.nuget.org/packages/EasySaver.BitmapFile/)
 
-### Description
-
-This is README file for EasySaver.BitmapFile.
+.NET CLI:
+```
+dotnet add package EasySaver.BitmapFile
+```
 
 ### Example Usage
 ```
