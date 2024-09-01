@@ -20,8 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>bitmap; bitmap-saving; file-saving; file</PackageTags>
     <PackageReleaseNotes>
-      v2.2.0
-      * All methods that work with SaveToFolder() or SaveToFolderSafe() was throwing an error when folderName is provided with default system values such as Environment.GetFolderPath(Environment.SpecialFolder.Desktop).
+      v2.2.1
+      *
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.BitmapFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>

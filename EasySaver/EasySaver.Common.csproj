@@ -16,9 +16,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>File; Saving; Save;</PackageTags>
     <PackageReleaseNotes>
-      v1.4.0
-      * TodayString, NowString and LongDayString are removed as NamingFormat.
-      * NamingFormat.Time, NamingFormat.Date and NamingFormat.DateTime are removed as a condition in GetFormattedDateTimeStamp(NamingFormat namingFormat) and GetFileName(string fileName, NamingFormat namingFormat = NamingFormat.LongDateTime) internal method.
+      v1.4.1
+      * Removing unused usings and removing white spaces.
       See changelog (https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>

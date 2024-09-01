@@ -20,8 +20,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>text; text-saving; file; file-saving</PackageTags>
     <PackageReleaseNotes>
-      v2.1.0
-      * All methods that work with SaveToFolder() or SaveToFolderSafe was throwing an error when folderName is provided with default system values such as Environment.GetFolderPath(Environment.SpecialFolder.Desktop).
+      v2.1.1
+      * Removing white lines.
       See changelog (https://github.com/meokullu/EasySaver/blob/master/EasySaver.TextFile/CHANGELOG.md)
     </PackageReleaseNotes>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
