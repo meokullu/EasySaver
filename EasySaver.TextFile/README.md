@@ -5,11 +5,18 @@ EasySaver.TextFile is a package to save text files easily with different naming 
 
 ![EasySaver](https://github.com/meokullu/EasySaver/assets/4971757/83483703-12f4-439b-b03b-95db2477e8c2)
 
+### Description
+This is README file for EasySaver.TextFile. 
+
+### How to download
+Release: [Latest release](https://github.com/meokullu/EasySaver/releases/latest)
+
 [Download on NuGet gallery](https://www.nuget.org/packages/EasySaver.TextFile/)
 
-### Description
-
-This is README file for EasySaver.TextFile. 
+.NET CLI:
+```
+dotnet add package EasySaver.TextFile
+```
 
 ### Example Usage
 ```
