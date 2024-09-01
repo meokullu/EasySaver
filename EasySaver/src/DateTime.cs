@@ -68,7 +68,7 @@ namespace EasySaver.Common
                 //
                 return $"{hour}-{minute}-{second}";
             }
-            else if ( namingFormat == NamingFormat.LongDate)
+            else if (namingFormat == NamingFormat.LongDate)
             {
                 //
                 return $"{year}-{month}-{day}";

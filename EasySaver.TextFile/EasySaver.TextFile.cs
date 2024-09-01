@@ -492,7 +492,7 @@ namespace EasySaver.TextFile
 
             // Checking if folder exists.
             if (CheckIfFolderExist(folderName) == false)
-            {   
+            {
                 // Creating folder if it doesn't exist. If folder is already exists, CreateDirectory ignores it.
                 _ = System.IO.Directory.CreateDirectory($"{folderName}\\");
             }

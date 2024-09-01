@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EasySaver.Common
+﻿namespace EasySaver.Common
 {
     public partial class EasySaver
     {
@@ -13,7 +11,7 @@ namespace EasySaver.Common
             /// File name will consist only given text itself.
             /// </summary>
             Custom = 1,
-            
+
             ///// <summary>
             ///// File name will consist random name that chosen from populated or prepopulated name list.
             ///// </summary>
