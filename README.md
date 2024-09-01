@@ -14,8 +14,17 @@ EasySaver is a multi-solution package to save bitmap image files and text files 
 * TextFile
 [![EasySaver](https://img.shields.io/nuget/v/EasySaver.TextFile.svg)](https://www.nuget.org/packages/EasySaver.TextFile/) [![EasySaver.TextFile](https://img.shields.io/nuget/dt/EasySaver.TextFile.svg)](https://www.nuget.org/packages/EasySaver.TextFile/)
 
-### Description
+### How to download
+Release: [Latest release](https://github.com/meokullu/EasySaver/releases/latest)
 
+[Download on NuGet gallery](https://www.nuget.org/packages/EasySaver.Common/)
+
+.NET CLI:
+```
+dotnet add package EasySaver.Common
+```
+
+### Description
 EasySaver has one common and two external packages. Common package have several internal, private and public methods. Via these methods using [EasySaver.BitmapFile](https://github.com/meokullu/EasySaver/tree/master/EasySaver.BitmapFile) or [EasySaver.TextFile](https://github.com/meokullu/EasySaver/tree/master/EasySaver.TextFile) are easy.
 
 ### Naming Formats
