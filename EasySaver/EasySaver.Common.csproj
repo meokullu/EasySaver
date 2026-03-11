@@ -7,19 +7,20 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Easy Saver</Title>
     <Copyright>Enes Okullu</Copyright>
-    <AssemblyVersion>1.4.1</AssemblyVersion>
-    <FileVersion>1.4.1</FileVersion>
+    <AssemblyVersion>1.5.0</AssemblyVersion>
+    <FileVersion>1.5.0</FileVersion>
     <Authors>Enes Okullu</Authors>
     <Company>Enes Okullu</Company>
-    <Version>1.4.1</Version>
+    <Version>1.5.0</Version>
     <Description>Easy Saver is a project to save files easily.</Description>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>File; Saving; Save;</PackageTags>
+    <PackageTags>File; File-Management; Saving; Save;</PackageTags>
     <PackageReleaseNotes>
-      v1.4.1
-      * Removing unused usings and removing white spaces.
-      See changelog (https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
-    </PackageReleaseNotes>
+		v1.5.0
+		* File listing methods added based on given path, searchPattern and SearchOption.
+		* Folder listing methods added based on given path, searchPattern and SearchOption.
+		See changelog (https://github.com/meokullu/EasySaver/blob/master/CHANGELOG.md)
+	</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://meokullu.github.io/EasySaver/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/meokullu/EasySaver</RepositoryUrl>
@@ -53,7 +54,7 @@
   <ItemGroup>
     <InternalsVisibleTo Include="EasySaver.TextFile" />
     <InternalsVisibleTo Include="EasySaver.BitmapFile" />
-    <InternalsVisibleTo Include="EasySaverTest" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />    
+    <InternalsVisibleTo Include="Test_EasySaver" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />    
 
   </ItemGroup>
 
