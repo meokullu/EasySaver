@@ -15,6 +15,7 @@
 #### Added
 * File listing methods added based on given path, searchPattern and SearchOption. 
 * Folder listing methods added based on given path, searchPattern and SearchOption.
+* Method summaries of new methos are created with CoPilot.
 ### [1.4.0]
 #### Removed
 * `TodayString`, `NowString` and `LongDayString` are removed as `NamingFormat`.
